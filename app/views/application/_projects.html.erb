@@ -2,10 +2,30 @@
   No projects
 <% else %>
   <% @projects.each do |project| %>
-    <div class="project-wrapper">
-      <%= project.title %>
-      <%= project.description %>
-      <%= project.order_index %>
-    </div>
+    <a class="project-link" rel="project" href="assets/project/classtalk_full.jpg" title="<%= project.description %>">
+      <div class="project-wrapper">
+        <%= project.title %>
+        <%= project.order_index %>
+      </div>
+    </a>
   <% end %>
 <% end %>
+<script>
+  $(document).ready(function() {
+
+  	/* Apply fancybox to multiple items */
+	
+  	$("a.project-link").fancybox({
+  		'transitionIn'	:	'elastic',
+  		'transitionOut'	:	'elastic',
+  		'speedIn'		:	600, 
+  		'speedOut'		:	200, 
+  		'overlayShow'	:	true,
+  		'titlePosition' : 'inside',
+  		'hideOnOverlayClick' : true,
+  		'overlayOpacity' : 0.6,
+  		'overlayColor' : '#000'
+  	});
+	
+  });
+</script>

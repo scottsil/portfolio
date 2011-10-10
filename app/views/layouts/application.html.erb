@@ -28,7 +28,7 @@
   <!-- CSS concatenated and minified via ant build script-->
   <link href="/assets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="/assets/print.css" media="print" rel="stylesheet" type="text/css" />
-  <link href="/assets/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
   <!--[if IE]>
       <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
@@ -38,8 +38,8 @@
 
   <!-- All JavaScript at the bottom, except for Modernizr / Respond.
        Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ 
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>-->
   <script type="text/javascript" src="http://use.typekit.com/udw0dpp.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= javascript_include_tag :defaults %>
@@ -52,24 +52,19 @@
 
   <!-- JavaScript at the bottom for fast page loading -->
 
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
-
   <!-- scripts concatenated and minified via ant build script-->
   <script defer src="js/plugins.js"></script>
   <script defer src="js/script.js"></script>
   <!-- end scripts-->
 
 	
-  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <!-- Change UA-XXXXX-X to be your site's ID 
   <script>
     window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
     Modernizr.load({
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });
-  </script>
+  </script>-->
 
 
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
