@@ -107,7 +107,9 @@ body {
 /* line 40, ../../../sass/_main.sass */
 .icon {
   width: 32px;
-  height: 32px; }
+  height: 32px;
+  display: inline-block;
+  margin-right: 3px; }
 
 /* line 33, icon */
 .icon-sprite, .icon-linkedin, .icon-twitter {
