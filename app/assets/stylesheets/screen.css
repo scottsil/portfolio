@@ -59,6 +59,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 /* line 1, ../../../sass/_main.sass */
+html, body {
+  height: 100%; }
+
+/* line 3, ../../../sass/_main.sass */
 body {
   background: black url("scottonbench_neck2_web2038x1200.jpg") top center fixed no-repeat;
   -moz-background-size: cover;
@@ -66,29 +70,34 @@ body {
   background-position: 50% 0px; }
 
 @media only all and (max-width: 1024px) and (max-height: 768px) {
-  /* line 8, ../../../sass/_main.sass */
+  /* line 10, ../../../sass/_main.sass */
   body {
     background-size: 1024px 768px; } }
-/* line 11, ../../../sass/_main.sass */
+/* line 12, ../../../sass/_main.sass */
 #container {
   width: 960px;
+  min-height: 100%;
+  height: auto !important;
   height: 100%;
-  margin: 0px auto; }
+  margin: 0 auto -100px; }
 
-/* line 16, ../../../sass/_main.sass */
-#main {
-  width: 100%;
-  height: 100%; }
-
+/* Style for the bio box */
 /* line 20, ../../../sass/_main.sass */
+#bio-wrapper {
+  padding: 30px 0px 60px 0px; }
+
+/* line 22, ../../../sass/_main.sass */
 #bio {
   width: 400px;
-  height: 100%;
-  margin-top: 30px;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-  border-radius: 3px;
-  padding: 20px; }
+  padding: 20px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px; }
   /* line 28, ../../../sass/_main.sass */
   #bio h1 {
     font-size: 62px;
@@ -104,16 +113,35 @@ body {
     margin-bottom: 12px;
     font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif; }
 
-/* line 40, ../../../sass/_main.sass */
+/* line 39, ../../../sass/_main.sass */
 #social {
   margin-top: 50px; }
 
-/* line 43, ../../../sass/_main.sass */
+/* line 41, ../../../sass/_main.sass */
 .icon {
   width: 32px;
   height: 32px;
   display: inline-block;
   margin-right: 5px; }
+
+/* line 46, ../../../sass/_main.sass */
+#push, #projects {
+  height: 100px; }
+
+/* Style for the projects box */
+/* line 50, ../../../sass/_main.sass */
+#projects {
+  min-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  -moz-border-radius: 3px 3px 0px 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  -o-border-radius: 3px 3px 0px 0px;
+  -ms-border-radius: 3px 3px 0px 0px;
+  -khtml-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+  overflow: auto; }
 
 /* line 45, icon */
 .icon-sprite, .icon-linkedin, .icon-mail, .icon-tumblr, .icon-twitter {
