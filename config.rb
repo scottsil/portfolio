@@ -5,13 +5,15 @@ http_path = "/"
 css_dir = "app/assets/stylesheets"
 sass_dir = "sass"
 images_dir = "app/assets/images"
+http_images_path = "/assets"
 javascripts_dir = "app/assets/javascripts"
+output_style = :nested
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
-# relative_assets = true
+relative_assets = false
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 # line_comments = false
