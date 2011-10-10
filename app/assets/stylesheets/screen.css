@@ -21,78 +21,64 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* line 20, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 /* line 22, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 /* line 24, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 /* line 26, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 /* line 28, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
-  quotes: none;
-}
-/* line 101, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
+  quotes: none; }
+  /* line 101, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
 
 /* line 30, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
-  border: none;
-}
+  border: none; }
 
 /* line 114, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
+  display: block; }
 
 /* line 1, ../../../sass/_main.sass */
 body {
   background: black url("scottonbench_neck2_web2038x1200.jpg") top center fixed no-repeat;
   -moz-background-size: cover;
   background-size: cover;
-  background-position: 50% 0px;
-}
+  background-position: 50% 0px; }
 
 @media only all and (max-width: 1024px) and (max-height: 768px) {
   /* line 8, ../../../sass/_main.sass */
   body {
-    background-size: 1024px 768px;
-  }
-}
+    background-size: 1024px 768px; } }
 /* line 11, ../../../sass/_main.sass */
 #container {
   width: 960px;
   height: 100%;
-  margin: 0px auto;
-}
+  margin: 0px auto; }
 
 /* line 16, ../../../sass/_main.sass */
 #main {
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
 
 /* line 20, ../../../sass/_main.sass */
 #bio {
@@ -102,5 +88,35 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
   border-radius: 3px;
-  padding: 20px;
-}
+  padding: 20px; }
+  /* line 28, ../../../sass/_main.sass */
+  #bio h1 {
+    font-size: 62px;
+    line-height: 80px; }
+  /* line 31, ../../../sass/_main.sass */
+  #bio h2 {
+    font-size: 30px;
+    line-height: 62px; }
+  /* line 34, ../../../sass/_main.sass */
+  #bio p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif; }
+
+/* line 40, ../../../sass/_main.sass */
+.icon {
+  width: 32px;
+  height: 32px; }
+
+/* line 33, icon */
+.icon-sprite, .icon-linkedin, .icon-twitter {
+  background: url('/assets/icon-sc87556a4ff.png') no-repeat; }
+
+/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-linkedin {
+  background-position: 0 0; }
+
+/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-twitter {
+  background-position: 0 -32px; }
