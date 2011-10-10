@@ -2,8 +2,10 @@
   No projects
 <% else %>
   <% @projects.each do |project| %>
-    <%= project.title %>
-    <%= project.description %>
-    <%= project.order_index %>
+    <div class="project-wrapper">
+      <%= project.title %>
+      <%= project.description %>
+      <%= project.order_index %>
+    </div>
   <% end %>
 <% end %>
