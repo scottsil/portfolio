@@ -43,19 +43,32 @@ body
 	height: 32px
 	display: inline-block
 	margin-right: 5px
-#push, #projects
+#push
 	height:  $project-height
 		
 /* Style for the projects box
-#projects
+div.projects
 	min-width:  960px
 	width: 100%
+	height: $project-height
 	margin: 0 auto
+	overflow-x: scroll
+	overflow-y: hidden
+	position: absolute
+div.projects.container
+	z-index: 100
+div.projects.under
 	background-color: $overlay-box
-	overflow: auto
+	z-index: 0
+ul.projects
+	display: block
+	list-style: none
+	height: 90px
+	width: 1500px
 .project-wrapper
 	height: 80px
 	width: 140px
 	margin: 11px 10px 0px 10px
 	background-color: rgba(255,255,255,0.3)
 	@include border-radius (1px)
+	float: left

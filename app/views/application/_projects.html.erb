@@ -1,32 +1,16 @@
 <% if @projects.empty? %>
   No projects
 <% else %>
+  <ul class="projects">
   <% @projects.each do |project| %>
-    <a class="project-link" rel="project" href="assets/project/<%= project.title %>/full.jpg" title="<%= project.description %>">
-      <div class="project-wrapper">
+    <li class="project-wrapper">
+        <a class="project-link" href="assets/project/<%= project.title %>/full.jpg" title="<%= project.description %>">
         <%= project.title %>
         <%= project.order_index %>
         <%= image_tag "assets/project/#{project.title}/thumb.jpg" %>
-      </div>
+        </a>
+    </li>
     </a>
   <% end %>
+  </ul>
 <% end %>
-<script>
-  $(document).ready(function() {
-
-  	/* Apply fancybox to multiple items */
-	
-  	$("a.project-link").fancybox({
-  		'transitionIn'	:	'elastic',
-  		'transitionOut'	:	'elastic',
-  		'speedIn'		:	600, 
-  		'speedOut'		:	200, 
-  		'overlayShow'	:	true,
-  		'titlePosition' : 'inside',
-  		'hideOnOverlayClick' : true,
-  		'overlayOpacity' : 0.6,
-  		'overlayColor' : '#000'
-  	});
-	
-  });
-</script>

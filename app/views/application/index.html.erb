@@ -4,6 +4,26 @@
   </div>
   <div id="push"></div>
 </div>
-<div id="projects">
+<div class="projects container">
   <%= render :partial => "projects" %>
 </div>
+<div class="projects under"></div>
+<script>
+  $(document).ready(function() {
+
+  	/* Apply fancybox to multiple items */
+	
+  	$("a.project-link").fancybox({
+  		'transitionIn'	:	'elastic',
+  		'transitionOut'	:	'elastic',
+  		'speedIn'		:	600, 
+  		'speedOut'		:	200, 
+  		'overlayShow'	:	true,
+  		'titlePosition' : 'inside',
+  		'hideOnOverlayClick' : true,
+  		'overlayOpacity' : 0.6,
+  		'overlayColor' : '#000'
+  	});
+	
+  });
+</script>
