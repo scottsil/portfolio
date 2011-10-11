@@ -2,10 +2,11 @@
   No projects
 <% else %>
   <% @projects.each do |project| %>
-    <a class="project-link" rel="project" href="assets/project/classtalk_full.jpg" title="<%= project.description %>">
+    <a class="project-link" rel="project" href="assets/project/<%= project.title %>/full.jpg" title="<%= project.description %>">
       <div class="project-wrapper">
         <%= project.title %>
         <%= project.order_index %>
+        <%= image_tag "assets/project/#{project.title}/thumb.jpg" %>
       </div>
     </a>
   <% end %>
