@@ -1,13 +1,13 @@
 <% if @projects.empty? %>
   No projects
 <% else %>
-  <ul class="projects" style="width: <%= @projects.count * 160 %>px;">
+  <ul class="projects" rel="projects" style="width: <%= @projects.count * 160 %>px;">
   <% @projects.each do |project| %>
     <li class="project-wrapper">
-        <a class="project-link" href="assets/project/<%= project.title %>/full.jpg" title="<%= project.description %>">
+        <a class="project-link" href="assets/project/<%= project.title.downcase.gsub(/\s/, '') %>/full.jpg" title="<%= project.description %>">
         <%= project.title %>
         <%= project.order_index %>
-        <%= image_tag "assets/project/#{project.title}/thumb.jpg" %>
+        <%= image_tag "assets/project/#{project.title.downcase.gsub(/\s/, '')}/thumb.jpg" %>
         </a>
     </li>
     </a>
