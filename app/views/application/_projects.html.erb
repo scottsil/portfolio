@@ -1,7 +1,7 @@
 <% if @projects.empty? %>
   No projects
 <% else %>
-  <ul class="projects">
+  <ul class="projects" style="width: <%= @projects.count * 160 %>px;">
   <% @projects.each do |project| %>
     <li class="project-wrapper">
         <a class="project-link" href="assets/project/<%= project.title %>/full.jpg" title="<%= project.description %>">

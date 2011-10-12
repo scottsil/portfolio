@@ -153,10 +153,9 @@ div.projects.under {
 ul.projects {
   display: block;
   list-style: none;
-  height: 90px;
-  width: 1500px; }
+  height: 90px; }
 
-/* line 69, ../../../sass/_main.sass */
+/* line 68, ../../../sass/_main.sass */
 .project-wrapper {
   height: 80px;
   width: 140px;
