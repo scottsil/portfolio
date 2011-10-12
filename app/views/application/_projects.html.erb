@@ -5,8 +5,10 @@
   <% @projects.each do |project| %>
     <li class="project">
         <a class="project" href="assets/project/<%= project.title.downcase.gsub(/\s/, '') %>/full.png" title="<%= project.description %>">
-        <span><%= project.title %></span>
-        <div class="arrow"></div>
+        <div class="title">
+          <span><%= project.title %></span>
+          <div class="arrow"></div>
+        </div>
         <%= image_tag "/assets/project/#{project.title.downcase.gsub(/\s/, '')}/thumb.png" %>
         </a>
     </li>

@@ -66,18 +66,16 @@ ul.projects
 	display: block
 	list-style: none
 	height: 140px
+	padding-top: 8px
 li.project
-	height: 80px
+	height: 130px
 	width: 140px
-	margin: 50px 10px 0px 10px
-	background-color: $image-box
-	@include border-radius (8px)
-	@include box-shadow
+	margin: 0px 10px 0px 10px
 	float: left
 .project
 	span
 		display: block
-		margin: -46px 0px 26px 0px
+		margin: 0px 0px 0px 0px
 		text-align: center
 		font-size: 12px
 		text-decoration: none
@@ -90,9 +88,14 @@ li.project
 		border-left: 7px solid transparent
 		border-right: 7px solid transparent
 		border-top: 7px solid $overlay-box
-		margin: -26px auto 19px auto
+		margin: 0px auto 0px auto
 	img
 		@include border-radius(8px)
+		background-color: $image-box
+		@include box-shadow
+		width: 140px
+		height: 80px
+		margin-top: 16px
 	a
 		text-decoration: none
 		color: $font-color
