@@ -22,7 +22,7 @@ body
 #bio
 	width: 400px
 	background-color: $overlay-box
-	color: #fff
+	color: $font-color
 	padding: 20px
 	@include border-radius
 	h1
@@ -35,7 +35,7 @@ body
 		font-size: 13px
 		line-height: 1.5
 		margin-bottom: 12px
-		font-family: 'Lucida Grande', Helvetica, Arial, Verdana, sans-serif
+		font-family: $font-for-copy
 #social
 	margin-top: 50px
 .icon
@@ -60,15 +60,40 @@ div.projects.container
 div.projects.under
 	background-color: $overlay-box
 	z-index: 0
-	height: $project-height
+	height: 100px
+	margin-top: 40px
 ul.projects
 	display: block
 	list-style: none
-	height: 90px
-.project-wrapper
+	height: 140px
+li.project
 	height: 80px
 	width: 140px
-	margin: 11px 10px 0px 10px
-	background-color: rgba(255,255,255,0.3)
-	@include border-radius (1px)
+	margin: 50px 10px 0px 10px
+	background-color: $image-box
+	@include border-radius (8px)
+	@include box-shadow
 	float: left
+.project
+	span
+		display: block
+		margin: -46px 0px 26px 0px
+		text-align: center
+		font-size: 12px
+		text-decoration: none
+		@include border-radius (8px)
+		background-color: $overlay-box
+		padding: 3px 0px 5px 0px
+	div.arrow
+		width: 0px
+		height: 0px
+		border-left: 7px solid transparent
+		border-right: 7px solid transparent
+		border-top: 7px solid $overlay-box
+		margin: -26px auto 19px auto
+	img
+		@include border-radius(8px)
+	a
+		text-decoration: none
+		color: $font-color
+		font-family: $font-for-copy
