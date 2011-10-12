@@ -165,6 +165,12 @@ li.project {
   float: left; }
 
 /* line 76, ../../../sass/_main.sass */
+.project div.title {
+  display: none; }
+/* line 78, ../../../sass/_main.sass */
+.project a:hover div.title {
+  display: block; }
+/* line 80, ../../../sass/_main.sass */
 .project span {
   display: block;
   margin: 0px 0px 0px 0px;
@@ -179,7 +185,7 @@ li.project {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 3px 0px 5px 0px; }
-/* line 85, ../../../sass/_main.sass */
+/* line 89, ../../../sass/_main.sass */
 .project div.arrow {
   width: 0px;
   height: 0px;
@@ -187,7 +193,7 @@ li.project {
   border-right: 7px solid transparent;
   border-top: 7px solid rgba(0, 0, 0, 0.4);
   margin: 0px auto 0px auto; }
-/* line 92, ../../../sass/_main.sass */
+/* line 96, ../../../sass/_main.sass */
 .project img {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -202,8 +208,11 @@ li.project {
   box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.4);
   width: 140px;
   height: 80px;
-  margin-top: 16px; }
-/* line 99, ../../../sass/_main.sass */
+  margin-top: 16px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 9px; }
+/* line 106, ../../../sass/_main.sass */
 .project a {
   text-decoration: none;
   color: white;
