@@ -37,12 +37,38 @@ body
 		margin-bottom: 12px
 		font-family: $font-for-copy
 #social
-	margin-top: 50px
+	margin: 50px 0px 12px 0px
+	height: 32px
 .icon
 	width: 32px
 	height: 32px
 	display: inline-block
 	margin-right: 5px
+.tip
+	display: inline-block
+	height: 32px
+	vertical-align: middle
+	padding-bottom: 10px
+	span
+		color: $font-color
+		font-family: $font-for-copy
+		font-size: 11px
+		background-color: $image-box-light
+		padding: 3px 4px 4px 4px
+		@include border-radius (4px)
+		@include box-shadow
+		z-index: 10
+		position: relative
+	.arrow
+		display: inline-block
+		width: 0px
+		height: 0px
+		border-top: 5px solid transparent
+		border-bottom: 5px solid transparent
+		border-right: 5px solid $image-box-light
+		margin: 0px -4px -1px 0px
+		z-index: 50
+		position: relative
 #push
 	height:  $project-height
 		
@@ -94,7 +120,7 @@ li.project
 		border-top: 7px solid $overlay-box
 		margin: 0px auto 0px auto
 	img
-		@include border-radius(8px)
+		@include border-radius(7px)
 		background-color: $image-box
 		@include box-shadow
 		width: 140px
