@@ -36,14 +36,22 @@ body
 		line-height: 1.5
 		margin-bottom: 12px
 		font-family: $font-for-copy
-#social
-	margin: 50px 0px 12px 0px
+#social, #work
+	margin: 35px 0px 12px 0px
 	height: 32px
+	a
+		text-decoration: none
+#social
+	float: left
+#work
+	float: right
 .icon
 	width: 32px
 	height: 32px
 	display: inline-block
 	margin-right: 5px
+.icon:last-child
+	margin-right: 0px
 .tip
 	display: inline-block
 	height: 32px
@@ -54,11 +62,12 @@ body
 		font-family: $font-for-copy
 		font-size: 11px
 		background-color: $image-box-light
-		padding: 3px 4px 4px 4px
+		padding: 3px 0px 4px 0px
 		@include border-radius (4px)
-		@include box-shadow
 		z-index: 10
 		position: relative
+		text-align: center
+		display: block
 	.arrow
 		display: inline-block
 		width: 0px
@@ -69,6 +78,11 @@ body
 		margin: 0px -4px -1px 0px
 		z-index: 50
 		position: relative
+.tip.social
+	width: 155px
+.tip.work
+	width: 195px
+	float: right
 #push
 	height:  $project-height
 		
