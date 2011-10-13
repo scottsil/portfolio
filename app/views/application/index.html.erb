@@ -34,6 +34,74 @@
   		'overlayOpacity' : 0.6,
   		'overlayColor' : '#000'
     });
-	
+    
+    //variables for tip span
+		var defaultTip = document.getElementById("default");
+		var appleTip = document.getElementById("apple");
+		var nytimesTip = document.getElementById("nytimes");
+		var cfaTip = document.getElementById("cfa");
+		var macworldTip = document.getElementById("macworld");
+		var arnoldTip = document.getElementById("arnold");
+    
+    //Hover Apple icon and tip
+    $('div.icon.co-apple').hover(overApple, outApple);
+  		//hide default tip, show apple tip on over Apple
+  		function overApple(event) {
+  			defaultTip.style.display = "none";
+  			appleTip.style.display = "block";
+  		}
+  		//show default tip, hide apple tip on out  Apple
+  		function outApple(event) {
+  			defaultTip.style.display = "block";
+  			appleTip.style.display = "none";
+  		};
+    //Hover NYT icon and tip
+    $('div.icon.co-nytimes').hover(overNYT, outNYT);
+  		//hide default tip, show apple tip on over Apple
+  		function overNYT(event) {
+  			defaultTip.style.display = "none";
+  			nytimesTip.style.display = "block";
+  		}
+  		//show default tip, hide apple tip on out  Apple
+  		function outNYT(event) {
+  			defaultTip.style.display = "block";
+  			nytimesTip.style.display = "none";
+  		};
+    //Hover CfA icon and tip
+    $('div.icon.co-cfa').hover(overCFA, outCFA);
+  		//hide default tip, show apple tip on over Apple
+  		function overCFA(event) {
+  			defaultTip.style.display = "none";
+  			cfaTip.style.display = "block";
+  		}
+  		//show default tip, hide apple tip on out  Apple
+  		function outCFA(event) {
+  			defaultTip.style.display = "block";
+  			cfaTip.style.display = "none";
+  		};
+    //Hover Macworld icon and tip
+    $('div.icon.co-macworld').hover(overMacworld, outMacworld);
+  		//hide default tip, show apple tip on over Apple
+  		function overMacworld(event) {
+  			defaultTip.style.display = "none";
+  			macworldTip.style.display = "block";
+  		}
+  		//show default tip, hide apple tip on out  Apple
+  		function outMacworld(event) {
+  			defaultTip.style.display = "block";
+  			macworldTip.style.display = "none";
+  		};
+    //Hover Arnold icon and tip
+    $('div.icon.co-arnold').hover(overArnold, outArnold);
+  		//hide default tip, show apple tip on over Apple
+  		function overArnold(event) {
+  			defaultTip.style.display = "none";
+  			arnoldTip.style.display = "block";
+  		}
+  		//show default tip, hide apple tip on out  Apple
+  		function outArnold(event) {
+  			defaultTip.style.display = "block";
+  			arnoldTip.style.display = "none";
+  		};
   });
 </script>
