@@ -13,7 +13,7 @@
           <%= image_tag "/assets/project/#{project.title.downcase.gsub(/\s/, '')}/thumb.png" %>
         </a>
       <% else %>
-        <a class="project" href="assets/project/<%= project.title.downcase.gsub(/\s/, '') %>/full.png" title="<%= project.description %>">
+        <a class="project" href="assets/project/<%= project.title.downcase.gsub(/\s/, '') %>/full.png" title="<%= project.title %>">
           <div class="title">
             <span><%= project.title %></span>
             <div class="arrow"></div>
