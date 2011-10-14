@@ -45,13 +45,16 @@ body
 	float: left
 #work
 	float: right
-.icon
+.icon, .icon-twitter, .icon-tumblr, .icon-linkedin, .icon-mail
 	width: 32px
 	height: 32px
 	display: inline-block
-	margin-right: 5px
+	padding-right: 9px
+	margin-left: -4px
+.icon-twitter
+	margin-left: 0px
 .icon:last-child
-	margin-right: 0px
+	padding-right: 0px
 .tip
 	display: inline-block
 	height: 32px
@@ -68,18 +71,6 @@ body
 		position: relative
 		text-align: center
 		display: block
-	#default
-		display: block
-	#apple
-		display: none
-	#nytimes
-		display: none
-	#cfa
-		display: none
-	#macworld
-		display: none
-	#arnold
-		display: none
 	.arrow
 		display: inline-block
 		width: 0px
@@ -91,10 +82,32 @@ body
 		z-index: 50
 		position: relative
 .tip.social
-	width: 140px
+	width: 155px
+	#default-social
+		display: block
+	#twitter
+		display: none
+	#tumblr
+		display: none
+	#linkedin
+		display: none
+	#email
+		display: none
 .tip.work
 	width: 195px
 	float: right
+	#default-work
+		display: block
+	#apple
+		display: none
+	#nytimes
+		display: none
+	#cfa
+		display: none
+	#macworld
+		display: none
+	#arnold
+		display: none
 #push
 	height:  $project-height
 		
@@ -155,7 +168,14 @@ li.project
 		position: absolute
 		bottom: 0
 		margin-bottom: 9px
+		opacity: 0.6
+	img:hover
+		opacity: 1
 	a
 		text-decoration: none
 		color: $font-color
 		font-family: $font-for-copy
+		
+/* Style overrides for fancybox
+.fancybox-bg
+	display: none

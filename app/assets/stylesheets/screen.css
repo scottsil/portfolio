@@ -130,23 +130,28 @@ body {
   float: right; }
 
 /* line 48, ../../../sass/_main.sass */
-.icon {
+.icon, .icon-twitter, .icon-tumblr, .icon-linkedin, .icon-mail {
   width: 32px;
   height: 32px;
   display: inline-block;
-  margin-right: 5px; }
+  padding-right: 9px;
+  margin-left: -4px; }
 
-/* line 53, ../../../sass/_main.sass */
+/* line 54, ../../../sass/_main.sass */
+.icon-twitter {
+  margin-left: 0px; }
+
+/* line 56, ../../../sass/_main.sass */
 .icon:last-child {
-  margin-right: 0px; }
+  padding-right: 0px; }
 
-/* line 55, ../../../sass/_main.sass */
+/* line 58, ../../../sass/_main.sass */
 .tip {
   display: inline-block;
   height: 32px;
   vertical-align: middle;
   padding-bottom: 10px; }
-  /* line 60, ../../../sass/_main.sass */
+  /* line 63, ../../../sass/_main.sass */
   .tip span {
     color: white;
     font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
@@ -163,25 +168,7 @@ body {
     position: relative;
     text-align: center;
     display: block; }
-  /* line 71, ../../../sass/_main.sass */
-  .tip #default {
-    display: block; }
-  /* line 73, ../../../sass/_main.sass */
-  .tip #apple {
-    display: none; }
-  /* line 75, ../../../sass/_main.sass */
-  .tip #nytimes {
-    display: none; }
-  /* line 77, ../../../sass/_main.sass */
-  .tip #cfa {
-    display: none; }
-  /* line 79, ../../../sass/_main.sass */
-  .tip #macworld {
-    display: none; }
-  /* line 81, ../../../sass/_main.sass */
-  .tip #arnold {
-    display: none; }
-  /* line 83, ../../../sass/_main.sass */
+  /* line 74, ../../../sass/_main.sass */
   .tip .arrow {
     display: inline-block;
     width: 0px;
@@ -193,21 +180,54 @@ body {
     z-index: 50;
     position: relative; }
 
-/* line 93, ../../../sass/_main.sass */
+/* line 84, ../../../sass/_main.sass */
 .tip.social {
-  width: 140px; }
+  width: 155px; }
+  /* line 86, ../../../sass/_main.sass */
+  .tip.social #default-social {
+    display: block; }
+  /* line 88, ../../../sass/_main.sass */
+  .tip.social #twitter {
+    display: none; }
+  /* line 90, ../../../sass/_main.sass */
+  .tip.social #tumblr {
+    display: none; }
+  /* line 92, ../../../sass/_main.sass */
+  .tip.social #linkedin {
+    display: none; }
+  /* line 94, ../../../sass/_main.sass */
+  .tip.social #email {
+    display: none; }
 
-/* line 95, ../../../sass/_main.sass */
+/* line 96, ../../../sass/_main.sass */
 .tip.work {
   width: 195px;
   float: right; }
+  /* line 99, ../../../sass/_main.sass */
+  .tip.work #default-work {
+    display: block; }
+  /* line 101, ../../../sass/_main.sass */
+  .tip.work #apple {
+    display: none; }
+  /* line 103, ../../../sass/_main.sass */
+  .tip.work #nytimes {
+    display: none; }
+  /* line 105, ../../../sass/_main.sass */
+  .tip.work #cfa {
+    display: none; }
+  /* line 107, ../../../sass/_main.sass */
+  .tip.work #macworld {
+    display: none; }
+  /* line 109, ../../../sass/_main.sass */
+  .tip.work #arnold {
+    display: none; }
 
-/* line 98, ../../../sass/_main.sass */
+/* line 111, ../../../sass/_main.sass */
 #push {
   height: 140px; }
 
 /* Style for the projects box */
-/* line 102, ../../../sass/_main.sass */
+/* line 115, ../../../sass/_main.sass */
 div.projects {
   min-width: 960px;
   width: 100%;
@@ -216,39 +236,39 @@ div.projects {
   overflow-y: hidden;
   position: absolute; }
 
-/* line 109, ../../../sass/_main.sass */
+/* line 122, ../../../sass/_main.sass */
 div.projects.container {
   z-index: 100;
   height: 140px; }
 
-/* line 112, ../../../sass/_main.sass */
+/* line 125, ../../../sass/_main.sass */
 div.projects.under {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
   height: 100px;
   margin-top: 40px; }
 
-/* line 117, ../../../sass/_main.sass */
+/* line 130, ../../../sass/_main.sass */
 ul.projects {
   display: block;
   list-style: none;
   height: 140px;
   padding-top: 8px; }
 
-/* line 122, ../../../sass/_main.sass */
+/* line 135, ../../../sass/_main.sass */
 li.project {
   height: 130px;
   width: 140px;
   margin: 0px 10px 0px 10px;
   float: left; }
 
-/* line 128, ../../../sass/_main.sass */
+/* line 141, ../../../sass/_main.sass */
 .project div.title {
   display: none; }
-/* line 130, ../../../sass/_main.sass */
+/* line 143, ../../../sass/_main.sass */
 .project a:hover div.title {
   display: block; }
-/* line 132, ../../../sass/_main.sass */
+/* line 145, ../../../sass/_main.sass */
 .project span {
   display: block;
   margin: 0px 0px 0px 0px;
@@ -263,7 +283,7 @@ li.project {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 3px 0px 5px 0px; }
-/* line 141, ../../../sass/_main.sass */
+/* line 154, ../../../sass/_main.sass */
 .project div.arrow {
   width: 0px;
   height: 0px;
@@ -271,7 +291,7 @@ li.project {
   border-right: 7px solid transparent;
   border-top: 7px solid rgba(0, 0, 0, 0.4);
   margin: 0px auto 0px auto; }
-/* line 148, ../../../sass/_main.sass */
+/* line 161, ../../../sass/_main.sass */
 .project img {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
@@ -289,12 +309,21 @@ li.project {
   margin-top: 16px;
   position: absolute;
   bottom: 0;
-  margin-bottom: 9px; }
-/* line 158, ../../../sass/_main.sass */
+  margin-bottom: 9px;
+  opacity: 0.6; }
+/* line 172, ../../../sass/_main.sass */
+.project img:hover {
+  opacity: 1; }
+/* line 174, ../../../sass/_main.sass */
 .project a {
   text-decoration: none;
   color: white;
   font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif; }
+
+/* Style overrides for fancybox */
+/* line 180, ../../../sass/_main.sass */
+.fancybox-bg {
+  display: none; }
 
 /* line 45, icon */
 .icon-sprite, .icon-linkedin, .icon-mail, .icon-tumblr, .icon-twitter {
