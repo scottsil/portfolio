@@ -8,7 +8,7 @@ $(document).ready(function() {
         'speedIn': 600,
         'speedOut': 200,
         'hideOnOverlayClick': true,
-        'overlayOpacity': 0.6,
+        'overlayOpacity': 0.7,
         'overlayColor': '#000'
     });
 
@@ -18,7 +18,7 @@ $(document).ready(function() {
         'height': 360,
         'type': 'iframe',
         'hideOnOverlayClick': true,
-        'overlayOpacity': 0.6,
+        'overlayOpacity': 0.7,
         'overlayColor': '#000'
     });
 
