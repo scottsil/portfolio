@@ -8,8 +8,9 @@ $(document).ready(function() {
         'speedIn': 600,
         'speedOut': 200,
         'hideOnOverlayClick': true,
-        'overlayOpacity': 0.7,
-        'overlayColor': '#000'
+        'overlayOpacity': 0.75,
+        'overlayColor': '#000',
+				'titlePosition': 'outside'
     });
 
     $('.vimeo').fancybox({
@@ -19,7 +20,8 @@ $(document).ready(function() {
         'type': 'iframe',
         'hideOnOverlayClick': true,
         'overlayOpacity': 0.7,
-        'overlayColor': '#000'
+        'overlayColor': '#000',
+				'titlePosition': 'outside'
     });
 
     //variables for Tip spans
