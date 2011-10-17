@@ -317,11 +317,6 @@ li.project {
   color: white;
   font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif; }
 
-/* Style overrides for fancybox */
-/* line 180, ../../../sass/_main.sass */
-.fancybox-bg {
-  display: none; }
-
 /* line 45, icon */
 .icon-sprite, .icon-linkedin, .icon-mail, .icon-tumblr, .icon-twitter {
   background: url('/assets/icon-s5f87046182.png') no-repeat; }
