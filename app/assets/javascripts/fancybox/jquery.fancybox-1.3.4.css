@@ -255,8 +255,9 @@
 }
 
 #fancybox-title {
-	font-family: Helvetica;
-	font-size: 12px;
+	font-size: 13px;
+	line-height: 1.5;
+	font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
 	z-index: 1102;
 }
 
@@ -285,6 +286,7 @@
 	padding: 10px;
 	background-image: url('fancy_title_over.png');
 	display: block;
+	line-height: 1.5;
 }
 
 .fancybox-title-float {
