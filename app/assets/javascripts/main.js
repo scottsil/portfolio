@@ -8,7 +8,7 @@ $(document).ready(function() {
         'speedIn': 600,
         'speedOut': 200,
         'hideOnOverlayClick': true,
-        'overlayOpacity': 0.75,
+        'overlayOpacity': 0.8,
         'overlayColor': '#000',
 				'titlePosition': 'outside'
     });
@@ -19,7 +19,7 @@ $(document).ready(function() {
         'height': 360,
         'type': 'iframe',
         'hideOnOverlayClick': true,
-        'overlayOpacity': 0.7,
+        'overlayOpacity': 0.8,
         'overlayColor': '#000',
 				'titlePosition': 'outside'
     });
