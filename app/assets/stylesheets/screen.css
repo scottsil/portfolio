@@ -228,7 +228,7 @@ div.projects {
   min-width: 960px;
   width: 100%;
   margin: 0 auto;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   position: absolute; }
 
