@@ -1,7 +1,7 @@
 <% if @projects.empty? %>
   No projects
 <% else %>
-  <ul class="projects" rel="projects" style="width: <%= @projects.count * 160 %>px;">
+  <ul class="projects" style="width: <%= @projects.count * 160 %>px;">
   <% @projects.each do |project| %>
     <% if project.order_index != nil %>
       <li class="project">
@@ -14,7 +14,7 @@
             <%= image_tag "/assets/project/#{project.title.downcase.gsub(/\s/, '')}/thumb.png" %>
           </a>
         <% else %>
-          <a class="project" href="assets/project/<%= project.title.downcase.gsub(/\s/, '') %>/full.png" title="<%= project.description %>" rel="project" >
+          <a class="project" href="assets/project/<%= project.title.downcase.gsub(/\s/, '') %>/full.png" title="<%= project.description %>" >
             <div class="title">
               <span><%= project.title %></span>
               <div class="arrow"></div>
