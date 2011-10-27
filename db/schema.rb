@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111017062316) do
+ActiveRecord::Schema.define(:version => 20111027023833) do
 
   create_table "projects", :force => true do |t|
     t.datetime "created_at"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20111017062316) do
     t.text     "description"
     t.integer  "order_index"
     t.string   "video_id"
+    t.string   "rel"
+    t.boolean  "display",     :default => true
   end
 
   create_table "rails_admin_histories", :force => true do |t|
