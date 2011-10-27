@@ -133,8 +133,8 @@
 
 #fancybox-left, #fancybox-right {
 	position: absolute;
-	bottom: 0px;
-	height: 100%;
+	top: 15%;
+	height: 70%;
 	width: 35%;
 	cursor: pointer;
 	outline: none;
@@ -273,7 +273,6 @@
 .fancybox-title-outside {
 	padding-top: 10px;
 	color: #fff;
-	text-shadow: 0px 1px 7px black;
 }
 
 .fancybox-title-over {
