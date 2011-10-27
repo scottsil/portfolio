@@ -1,20 +1,23 @@
 <% if @projects.empty? %>
   No projects
+  
 <% else %>
-  <ul class="projects" style="width: <%= @projects.count * 160 %>px;">
+  <ul class="projects" style="width: <%= Project.where(:display => true).count * 160 %>px;">
   <% @projects.each do |project| %>
+  
     <% if project.order_index != nil %>
-      <li class="project">
+      <li class="project" <% if project.display == false %>style='display: none;' <% end %>>
         <% if project.video_id != nil %>
-          <a class="vimeo" href="http://player.vimeo.com/video/<%= project.video_id %>?title=0&amp;byline=0&amp;portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen allowFullScreen title="<%= project.description %>" >
+          <a class="vimeo" rel="<%= project.rel %>" href="http://player.vimeo.com/video/<%= project.video_id %>?title=0&amp;byline=0&amp;portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen allowFullScreen title="<%= project.description %>" >
             <div class="title">
               <span><%= project.title %></span>
               <div class="arrow"></div>
             </div>
             <%= image_tag "/assets/project/#{project.title.downcase.gsub(/\s/, '')}/thumb.png" %>
           </a>
+          
         <% else %>
-          <a class="project" href="assets/project/<%= project.title.downcase.gsub(/\s/, '') %>/full.png" title="<%= project.description %>" >
+          <a class="project" rel="<%= project.rel %>" href="assets/project/<%= project.title.downcase.gsub(/\s/, '') %>/full.png" title="<%= project.description %>" >
             <div class="title">
               <span><%= project.title %></span>
               <div class="arrow"></div>
@@ -22,6 +25,7 @@
             <%= image_tag "/assets/project/#{project.title.downcase.gsub(/\s/, '')}/thumb.png" %>
           </a>
         <% end %>
+        
       </li>
     <% end %>
   <% end %>

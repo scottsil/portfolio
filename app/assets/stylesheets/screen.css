@@ -315,6 +315,15 @@ li.project {
   color: white;
   font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif; }
 
+/* line 176, ../../../sass/_main.sass */
+.image-no {
+  font-weight: normal;
+  margin: 4px 12px 0px 0px;
+  font-size: 20px;
+  line-height: 12px;
+  float: left;
+  height: 4em; }
+
 /* line 45, icon */
 .icon-sprite, .icon-linkedin, .icon-mail, .icon-tumblr, .icon-twitter {
   background: url('/assets/icon-s5f87046182.png') no-repeat; }
