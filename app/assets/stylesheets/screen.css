@@ -101,8 +101,8 @@ body {
   /* line 30, ../../../sass/_main.sass */
   #bio h2 {
     font-size: 30px;
-    line-height: 30px;
-    margin: 24px 0px 14px 0px; }
+    line-height: 32px;
+    margin: 18px 0px 17px 0px; }
   /* line 34, ../../../sass/_main.sass */
   #bio p {
     font-size: 13px;
@@ -146,9 +146,8 @@ body {
 .tip {
   display: inline-block;
   height: 32px;
-  vertical-align: middle;
-  padding-bottom: 4px; }
-  /* line 63, ../../../sass/_main.sass */
+  vertical-align: middle; }
+  /* line 62, ../../../sass/_main.sass */
   .tip span {
     color: white;
     font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
@@ -165,7 +164,7 @@ body {
     position: relative;
     text-align: center;
     display: block; }
-  /* line 74, ../../../sass/_main.sass */
+  /* line 73, ../../../sass/_main.sass */
   .tip .arrow {
     display: inline-block;
     width: 0px;
@@ -177,54 +176,54 @@ body {
     z-index: 50;
     position: relative; }
 
-/* line 84, ../../../sass/_main.sass */
+/* line 83, ../../../sass/_main.sass */
 .tip.social {
   width: 155px; }
-  /* line 86, ../../../sass/_main.sass */
+  /* line 85, ../../../sass/_main.sass */
   .tip.social #default-social {
     display: block; }
-  /* line 88, ../../../sass/_main.sass */
+  /* line 87, ../../../sass/_main.sass */
   .tip.social #twitter {
     display: none; }
-  /* line 90, ../../../sass/_main.sass */
+  /* line 89, ../../../sass/_main.sass */
   .tip.social #tumblr {
     display: none; }
-  /* line 92, ../../../sass/_main.sass */
+  /* line 91, ../../../sass/_main.sass */
   .tip.social #linkedin {
     display: none; }
-  /* line 94, ../../../sass/_main.sass */
+  /* line 93, ../../../sass/_main.sass */
   .tip.social #email {
     display: none; }
 
-/* line 96, ../../../sass/_main.sass */
+/* line 95, ../../../sass/_main.sass */
 .tip.work {
   width: 195px;
   float: right; }
-  /* line 99, ../../../sass/_main.sass */
+  /* line 98, ../../../sass/_main.sass */
   .tip.work #default-work {
     display: block; }
-  /* line 101, ../../../sass/_main.sass */
+  /* line 100, ../../../sass/_main.sass */
   .tip.work #apple {
     display: none; }
-  /* line 103, ../../../sass/_main.sass */
+  /* line 102, ../../../sass/_main.sass */
   .tip.work #nytimes {
     display: none; }
-  /* line 105, ../../../sass/_main.sass */
+  /* line 104, ../../../sass/_main.sass */
   .tip.work #cfa {
     display: none; }
-  /* line 107, ../../../sass/_main.sass */
+  /* line 106, ../../../sass/_main.sass */
   .tip.work #macworld {
     display: none; }
-  /* line 109, ../../../sass/_main.sass */
+  /* line 108, ../../../sass/_main.sass */
   .tip.work #arnold {
     display: none; }
 
-/* line 111, ../../../sass/_main.sass */
+/* line 110, ../../../sass/_main.sass */
 #push {
   height: 140px; }
 
 /* Style for the projects box */
-/* line 115, ../../../sass/_main.sass */
+/* line 114, ../../../sass/_main.sass */
 div.projects {
   min-width: 960px;
   width: 100%;
@@ -233,17 +232,17 @@ div.projects {
   overflow-y: hidden;
   position: absolute; }
 
-/* line 122, ../../../sass/_main.sass */
+/* line 121, ../../../sass/_main.sass */
 div.projects.container {
   height: 140px; }
 
-/* line 124, ../../../sass/_main.sass */
+/* line 123, ../../../sass/_main.sass */
 div.projects.under {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100px;
   margin-top: 40px; }
 
-/* line 128, ../../../sass/_main.sass */
+/* line 127, ../../../sass/_main.sass */
 ul.projects {
   display: block;
   list-style: none;
@@ -251,20 +250,20 @@ ul.projects {
   padding-top: 8px;
   margin: 0 auto; }
 
-/* line 134, ../../../sass/_main.sass */
+/* line 133, ../../../sass/_main.sass */
 li.project {
   height: 130px;
   width: 140px;
   margin: 0px 10px 0px 10px;
   float: left; }
 
-/* line 140, ../../../sass/_main.sass */
+/* line 139, ../../../sass/_main.sass */
 .project div.title {
   display: none; }
-/* line 142, ../../../sass/_main.sass */
+/* line 141, ../../../sass/_main.sass */
 .project a:hover div.title {
   display: block; }
-/* line 144, ../../../sass/_main.sass */
+/* line 143, ../../../sass/_main.sass */
 .project span {
   display: block;
   margin: 0px 0px 0px 0px;
@@ -279,7 +278,7 @@ li.project {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 3px 0px 5px 0px; }
-/* line 153, ../../../sass/_main.sass */
+/* line 152, ../../../sass/_main.sass */
 .project div.arrow {
   width: 0px;
   height: 0px;
@@ -287,7 +286,7 @@ li.project {
   border-right: 7px solid transparent;
   border-top: 7px solid rgba(0, 0, 0, 0.5);
   margin: 0px auto 0px auto; }
-/* line 160, ../../../sass/_main.sass */
+/* line 159, ../../../sass/_main.sass */
 .project img {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
@@ -307,16 +306,16 @@ li.project {
   bottom: 0;
   margin-bottom: 9px;
   opacity: 0.6; }
-/* line 171, ../../../sass/_main.sass */
+/* line 170, ../../../sass/_main.sass */
 .project img:hover {
   opacity: 1; }
-/* line 173, ../../../sass/_main.sass */
+/* line 172, ../../../sass/_main.sass */
 .project a {
   text-decoration: none;
   color: white;
   font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif; }
 
-/* line 177, ../../../sass/_main.sass */
+/* line 176, ../../../sass/_main.sass */
 .image-no {
   font-weight: normal;
   margin: 4px 12px 0px 0px;
