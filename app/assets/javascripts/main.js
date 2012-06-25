@@ -30,7 +30,7 @@ $(document).ready(function() {
     var appleTip = document.getElementById("apple");
     var nytimesTip = document.getElementById("nytimes");
     var cfaTip = document.getElementById("cfa");
-    var macworldTip = document.getElementById("macworld");
+    var airbnbTip = document.getElementById("airbnb");
     var arnoldTip = document.getElementById("arnold");
 		var twitterTip = document.getElementById("twitter");
 		var tumblrTip = document.getElementById("tumblr");
@@ -121,17 +121,17 @@ $(document).ready(function() {
         defaultWorkTip.style.display = "block";
         cfaTip.style.display = "none";
     };
-    //Hover Macworld icon and tip
-    $('div.icon.co-macworld').hover(overMacworld, outMacworld);
+    //Hover Airbnb icon and tip
+    $('div.icon.co-airbnb').hover(overAirbnb, outAirbnb);
     //hide default tip, show apple tip on over
-    function overMacworld(event) {
+    function overAirbnb(event) {
         defaultWorkTip.style.display = "none";
-        macworldTip.style.display = "block";
+        airbnbTip.style.display = "block";
     }
     //show default tip, hide apple tip on out
-    function outMacworld(event) {
+    function outAirbnb(event) {
         defaultWorkTip.style.display = "block";
-        macworldTip.style.display = "none";
+        airbnbTip.style.display = "none";
     };
     //Hover Arnold icon and tip
     $('div.icon.co-arnold').hover(overArnold, outArnold);

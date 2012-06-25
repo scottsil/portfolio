@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,38 +23,38 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline; }
 
-/* line 20, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1; }
 
-/* line 22, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none; }
 
-/* line 24, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 26, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
-/* line 28, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
-  /* line 101, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  /* line 101, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
-/* line 30, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
-/* line 114, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
@@ -97,11 +97,10 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 20px;
-  -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
   -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
+  -o-border-radius: 10px;
   border-radius: 10px; }
   /* line 32, ../../../sass/_main.sass */
   #bio h1 {
@@ -163,11 +162,10 @@ a:hover {
     font-size: 11px;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 3px 0px 4px 0px;
-    -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    -o-border-radius: 4px;
+    -moz-border-radius: 4px;
     -ms-border-radius: 4px;
-    -khtml-border-radius: 4px;
+    -o-border-radius: 4px;
     border-radius: 4px;
     z-index: 10;
     position: relative;
@@ -215,7 +213,7 @@ a:hover {
 
 /* line 106, ../../../sass/_main.sass */
 .tip.work {
-  width: 195px;
+  width: 155px;
   float: right; }
   /* line 109, ../../../sass/_main.sass */
   .tip.work #default-work {
@@ -230,18 +228,15 @@ a:hover {
   .tip.work #cfa {
     display: none; }
   /* line 117, ../../../sass/_main.sass */
-  .tip.work #macworld {
-    display: none; }
-  /* line 119, ../../../sass/_main.sass */
-  .tip.work #arnold {
+  .tip.work #airbnb {
     display: none; }
 
-/* line 121, ../../../sass/_main.sass */
+/* line 119, ../../../sass/_main.sass */
 #push {
   height: 140px; }
 
 /* Style for the projects box */
-/* line 125, ../../../sass/_main.sass */
+/* line 123, ../../../sass/_main.sass */
 div.projects {
   min-width: 960px;
   width: 100%;
@@ -250,17 +245,17 @@ div.projects {
   overflow-y: hidden;
   position: absolute; }
 
-/* line 132, ../../../sass/_main.sass */
+/* line 130, ../../../sass/_main.sass */
 div.projects.container {
   height: 140px; }
 
-/* line 134, ../../../sass/_main.sass */
+/* line 132, ../../../sass/_main.sass */
 div.projects.under {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100px;
   margin-top: 40px; }
 
-/* line 138, ../../../sass/_main.sass */
+/* line 136, ../../../sass/_main.sass */
 ul.projects {
   display: block;
   list-style: none;
@@ -268,35 +263,34 @@ ul.projects {
   padding-top: 8px;
   margin: 0 auto; }
 
-/* line 144, ../../../sass/_main.sass */
+/* line 142, ../../../sass/_main.sass */
 li.project {
   height: 130px;
   width: 140px;
   margin: 0px 10px 0px 10px;
   float: left; }
 
-/* line 150, ../../../sass/_main.sass */
+/* line 148, ../../../sass/_main.sass */
 .project div.title {
   display: none; }
-/* line 152, ../../../sass/_main.sass */
+/* line 150, ../../../sass/_main.sass */
 .project a:hover div.title {
   display: block; }
-/* line 154, ../../../sass/_main.sass */
+/* line 152, ../../../sass/_main.sass */
 .project span {
   display: block;
   margin: 0px 0px 0px 0px;
   text-align: center;
   font-size: 12px;
   text-decoration: none;
-  -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
-  -o-border-radius: 8px;
+  -moz-border-radius: 8px;
   -ms-border-radius: 8px;
-  -khtml-border-radius: 8px;
+  -o-border-radius: 8px;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 3px 0px 5px 0px; }
-/* line 163, ../../../sass/_main.sass */
+/* line 161, ../../../sass/_main.sass */
 .project div.arrow {
   width: 0px;
   height: 0px;
@@ -304,18 +298,16 @@ li.project {
   border-right: 7px solid transparent;
   border-top: 7px solid rgba(0, 0, 0, 0.5);
   margin: 0px auto 0px auto; }
-/* line 170, ../../../sass/_main.sass */
+/* line 168, ../../../sass/_main.sass */
 .project img {
-  -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
-  -o-border-radius: 7px;
+  -moz-border-radius: 7px;
   -ms-border-radius: 7px;
-  -khtml-border-radius: 7px;
+  -o-border-radius: 7px;
   border-radius: 7px;
   background-color: rgba(255, 255, 255, 0.15);
-  -moz-box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.4);
-  -o-box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.4);
   box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.4);
   width: 140px;
   height: 80px;
@@ -324,16 +316,16 @@ li.project {
   bottom: 0;
   margin-bottom: 9px;
   opacity: 0.6; }
-/* line 181, ../../../sass/_main.sass */
+/* line 179, ../../../sass/_main.sass */
 .project img:hover {
   opacity: 1; }
-/* line 183, ../../../sass/_main.sass */
+/* line 181, ../../../sass/_main.sass */
 .project a {
   text-decoration: none;
   color: white;
   font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif; }
 
-/* line 187, ../../../sass/_main.sass */
+/* line 185, ../../../sass/_main.sass */
 .image-no {
   font-weight: normal;
   margin: 4px 12px 0px 0px;
@@ -342,46 +334,50 @@ li.project {
   float: left;
   height: 4em; }
 
-/* line 45, icon */
+/* line 66, icon/*.png */
 .icon-sprite, .icon-linkedin, .icon-mail, .icon-tumblr, .icon-twitter {
-  background: url('/assets/icon-s5f87046182.png') no-repeat; }
+  background: url('/assets/icon-s054babf7ec.png') no-repeat; }
 
-/* line 51, co */
-.co-sprite, .co-apple, .co-arnold, .co-cfa, .co-macworld, .co-nytimes {
-  background: url('/assets/co-s2cb81d7b2a.png') no-repeat; }
+/* line 82, co/*.png */
+.co-sprite, .co-airbnb, .co-apple, .co-arnold, .co-cfa, .co-macworld, .co-nytimes {
+  background: url('/assets/co-s1a54de7c73.png') no-repeat; }
 
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .icon-linkedin {
-  background-position: 0 0; }
-
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-mail {
   background-position: 0 -32px; }
 
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-mail {
+  background-position: 0 -96px; }
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .icon-tumblr {
   background-position: 0 -64px; }
 
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .icon-twitter {
-  background-position: 0 -96px; }
-
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.co-apple {
   background-position: 0 0; }
 
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.co-arnold {
-  background-position: 0 -32px; }
-
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.co-cfa {
-  background-position: 0 -64px; }
-
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.co-macworld {
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.co-airbnb {
   background-position: 0 -96px; }
 
-/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.co-nytimes {
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.co-apple {
+  background-position: 0 -160px; }
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.co-arnold {
   background-position: 0 -128px; }
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.co-cfa {
+  background-position: 0 0; }
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.co-macworld {
+  background-position: 0 -64px; }
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.3-p125/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.co-nytimes {
+  background-position: 0 -32px; }
