@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!-- Add your site or application content here -->
+        <div id="airbnb_site_header">
+            <img src="img/new_header_right.png" id='new_header_right'>
+            <img src="img/new_header_left.png" id='new_header_left'>
+        </div>
+        <div id="site_content">
+            <div id="manage_listing_header">
+                <span id="header_title">Private room in San Francisco</span>
+            </div>
+            <div id="manage_listing_nav">
+                <ul>
+                    <a href="#" onclick="showCalendar();"><li id="nav_calendar"><div style="display:inline-block;padding-top: 24px;line-height:17px;">Calendar<br>& Prices</div><div class="status_icon calendar"><div class="status_icon calendar complete animated pulse hidden"></div></li></a>
+                    <a href="#" onclick="showDescription();"><li id="nav_description">Description<div class="status_icon description"><div class="status_icon description complete animated pulse hidden"></div></li></a>
+                    <a href="#" onclick="showPhotos();"><li id="nav_photos">Photos<div class="status_icon photos"><div class="status_icon photos complete animated pulse hidden"></div></li></a>
+                    <a href="#" onclick="showDetails();"><li id="nav_details">Details<div class="status_icon details"><div class="status_icon details complete animated pulse hidden"></div></li></a>
+                </ul>
+                <div id="publish_cta" class="hidden">
+                    <h3 class="signpainter animated flash">Complete all<br>to publish!</h3>
+                    <a href="#" onclick="showPublish();" class="btn pink disabled" style="font-size:18px;">Publish</a>
+                </div>
+            </div>
+            <div id="manage_listing_content">
+                <div id="content_shadow"></div>
+                <div id='welcome' class="section"></div>
+                <div id='calendar' class="section hidden">
+                    <div id="calendar_content">
+                        <div class="section_header first">
+                            <h2>Calendar</h2>
+                            <h4>Set your listing's availability and nightly prices.</h4>
+                            <hr>
+                        </div>
+                        <div id="calendar_availability">
+                            <div id="choose_availability">
+                                <h2>When is your listing available?</h2>
+                                <div id="availability_options">
+                                    <a href="#" onclick="setCalendarAlways();"><div id="option_always"><h3>Always</h3><h4>List all dates<br>as available</h4></div></a>
+                                    <a href="#" onclick="setCalendarSometimes();"><div id="option_sometimes"><h3>Sometimes</h3><h4>List some dates<br>as available</h4></div></a>
+                                    <a href="#" onclick="setCalendarOneTime();"><div id="option_onetime"><h3>One Time</h3><h4>List only one time<br>period as available</h4></div></a>
+                                </div>
+                                <h5>You can change this setting at any time.</h5>
+                            </div>
+                            <div class="available_info always animated fadeInRight hidden">
+                                <h3>Always Available</h3>
+                                <h4>All dates will be listed as available.<br>The calendar will become active after publishing your listing.</h4>
+                                <a href="#" onclick="chooseCalendarAgain();"><span id="back_to_choose_availability">« choose again</span></a>
+                            </div>
+                            <div class="available_info sometimes animated fadeInRight hidden">
+                                <h3>Sometimes Available</h3>
+                                <h4>All dates will be listed as available.<br>The calendar will become active after publishing your listing.</h4>
+                                <a href="#" onclick="chooseCalendarAgain();"><span id="back_to_choose_availability">« choose again</span></a>
+                            </div>
+                            <div class="available_info onetime animated fadeInRight hidden">
+                                <h3>One-Time Availability</h3>
+                                <h4>All dates will be listed as available.<br>The calendar will become active after publishing your listing.</h4>
+                                <a href="#" onclick="chooseCalendarAgain();"><span id="back_to_choose_availability" class="onetime" >« choose again</span></a>
+                            </div>
+                        </div>
+                        <div class="section_header">
+                            <hr>
+                            <h2>Standard Prices</h2>
+                            <h4>Set your listing's standard nightly, weekly, and monthly price.</h4>
+                            <hr>
+                        </div>
+                        <div id="standard_prices">
+                        </div>
+                    </div>
+                    <div id="calendar_help">
+                        <div class="help_container calendar animated fadeInRight hidden">
+                            <div class="help_arrow"></div>
+                            <h3>Configuring your calendar</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
+                        </div>
+                        <div class="help_container prices animated fadeInRight hidden">
+                            <div class="help_arrow"></div>
+                            <h3>Setting standard prices</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id='description' class="section hidden">
+                    <div id="description_content">
+                        Description 
+                    </div>
+                    <div id="description_help">
+                        <div class="help_container description">
+                            <div class="help_arrow"></div>
+                            <h3>Your listing's availability</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id='photos' class="section hidden">
+                    <div id="photos_content">
+                        Photos
+                    </div>
+                    <div id="photos_help">
+                        <div class="help_container photos">
+                            <div class="help_arrow"></div>
+                            <h3>Your listing's availability</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id='details' class="section hidden">
+                    <div id="details_content">
+                        Details
+                    </div>
+                    <div id="details_help">
+                        <div class="help_container details">
+                            <div class="help_arrow"></div>
+                            <h3>Your listing's availability</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id='publish_incomplete' class="section hidden">Not ready to publish!</div>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
