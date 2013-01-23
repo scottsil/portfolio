@@ -28,15 +28,22 @@
                 <span id="header_title">Private room in San Francisco</span>
             </div>
             <div id="manage_listing_nav">
+                <a href="#" onclick="hideDescriptionTooltip();"><div class="tooltip next description animated fadeInRight hidden" ></div></a>
+                <a href="#" onclick="hidePhotosTooltip();"><div class="tooltip next photos animated fadeInRight hidden" ></div></a>
+                <a href="#" onclick="hideDetailsTooltip();"><div class="tooltip next details animated fadeInRight hidden" ></div></a>
                 <ul>
                     <a href="#" onclick="showCalendar();"><li id="nav_calendar"><div style="display:inline-block;padding-top: 24px;line-height:17px;">Calendar<br>& Prices</div><div class="status_icon calendar"><div class="status_icon calendar complete animated pulse hidden"></div></li></a>
                     <a href="#" onclick="showDescription();"><li id="nav_description">Description<div class="status_icon description"><div class="status_icon description complete animated pulse hidden"></div></li></a>
                     <a href="#" onclick="showPhotos();"><li id="nav_photos">Photos<div class="status_icon photos"><div class="status_icon photos complete animated pulse hidden"></div></li></a>
                     <a href="#" onclick="showDetails();"><li id="nav_details">Details<div class="status_icon details"><div class="status_icon details complete animated pulse hidden"></div></li></a>
                 </ul>
-                <div id="publish_cta" class="hidden">
-                    <h3 class="signpainter animated flash">Complete all<br>to publish!</h3>
-                    <a href="#" onclick="showPublish();" class="btn pink disabled" style="font-size:18px;">Publish</a>
+                <div id="publish_cta" class="hidden publish_cta animated fadeInUp">
+                    <h3 class="signpainter">Complete all<br>to publish!</h3>
+                    <a href="#" onclick="" class="btn pink disabled" style="font-size:18px;">Publish</a>
+                </div>
+                <div id="publish_cta_complete" class="hidden publish_cta_complete animated pulse">
+                    <h3 class="signpainter">You're ready<br>to publish!</h3>
+                    <a href="#" onclick="showPublish();" class="btn pink publish disabled" style="font-size:18px;">Publish</a>
                 </div>
             </div>
             <div id="manage_listing_content">
@@ -87,43 +94,75 @@
                     <div id="calendar_help">
                         <div class="help_container calendar animated fadeInRight hidden">
                             <div class="help_arrow"></div>
-                            <h3>Configuring your calendar</h3>
+                            <h3>Configure your calendar</h3>
                             <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
                         </div>
                         <div class="help_container prices animated fadeInRight hidden">
                             <div class="help_arrow"></div>
-                            <h3>Setting standard prices</h3>
+                            <h3>Set standard prices</h3>
                             <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat.</p>
                         </div>
                     </div>
                 </div>
                 <div id='description' class="section hidden">
                     <div id="description_content">
-                        Description 
+                        <label>Title</label>
+                        <input id="listing_title" onfocus="showTitleHelp();" onblur="hideTitleHelp();"></input>
+                        <label>Summary<span> in 140 characters</span></label>
+                        <textarea id="listing_description" onfocus="showDescriptionHelp(); showSaveDescription();" onblur="hideDescriptionHelp();"></textarea>
+                        <a href="#" onclick="hideSaveDescription();" class="description btn green right animated fadeIn hidden">Save</a><span id="character_count" class="right hidden animated fadeIn">140</span>
                     </div>
                     <div id="description_help">
-                        <div class="help_container description">
+                        <div class="help_container title animated fadeInRight hidden">
                             <div class="help_arrow"></div>
-                            <h3>Your listing's availability</h3>
+                            <h3>Craft a title</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
+                        </div>
+                        <div class="help_container description animated fadeInRight hidden">
+                            <div class="help_arrow"></div>
+                            <h3>Write a short summary</h3>
                             <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
                         </div>
                     </div>
                 </div>
                 <div id='photos' class="section hidden">
                     <div id="photos_content">
-                        Photos
+                        <div id="photo_uploader"><a href="#" onclick="triggerFileUpload();" class="btn add_photos">+ Add Photos</a><input type="file" multiple></div>
+                        <div class="photo_area">
+                        </div>
                     </div>
                     <div id="photos_help">
-                        <div class="help_container photos">
+                        <div class="help_container add photos animated fadeInRight hidden">
                             <div class="help_arrow"></div>
-                            <h3>Your listing's availability</h3>
+                            <h3>Add photos</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl.</p>
+                        </div>
+                        <div class="help_container edit photos animated fadeInRight hidden">
+                            <div class="help_arrow"></div>
+                            <h3>Describe your photos</h3>
                             <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
                         </div>
                     </div>
                 </div>
                 <div id='details' class="section hidden">
                     <div id="details_content">
-                        Details
+                        <div class="section_header first">
+                            <h2>Amenities</h2>
+                            <h4>Set your listing's availability and nightly prices.</h4>
+                            <hr>
+                        </div>
+                        <label class="checkbox">
+                            <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet();"> TV
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet();"> Cable TV
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet();"> Internet
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet();"> Wireless Internet
+                        </label>
                     </div>
                     <div id="details_help">
                         <div class="help_container details">
@@ -133,7 +172,7 @@
                         </div>
                     </div>
                 </div>
-                <div id='publish_incomplete' class="section hidden">Not ready to publish!</div>
+                <div id='publish_incomplete' class="section hidden"></div>
             </div>
         </div>
 
