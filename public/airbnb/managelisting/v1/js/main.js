@@ -165,18 +165,65 @@ function chooseCalendarAgain() {
    Description section
    ========================================================================== */
 
-function showSaveDescription () {
-	$('.btn.description').removeClass('hidden');
-	$('#character_count').removeClass('hidden');
+var saveComplete;
+var hideSaveComplete;
+var summaryCharCount;
+var descriptionCompleteCount = 0;
+
+function descriptionComplete () {
+	$('.status_icon.description.complete').removeClass('hidden');
+	$('.tooltip.next.description').addClass('perma-hidden');
+	if (descriptionCompleteCount == 0) {
+		sectionCompleteCount++;
+		descriptionCompleteCount++;
+	}
+	activatePublishAbility();
 }
 
-function hideSaveDescription () {
-	$('.status_icon.description.complete, .tooltip.next.photos').removeClass('hidden');
-	$('.tooltip.next.description').addClass('perma-hidden');
-	$('.btn.description').addClass('hidden');
-	$('#character_count').addClass('hidden');
-	sectionCompleteCount++;
-	activatePublishAbility();
+function saveTitleField () {
+	$('.save_notice.title.start').removeClass('hidden');
+	clearTimeout(saveComplete);
+	saveComplete = setTimeout(
+		function(){
+			$('.save_notice.title.start').addClass('hidden');
+			$('.save_notice.title.finish').removeClass('hidden');
+			hideSaveComplete = setTimeout(
+				function(){
+					$('.save_notice.title.finish').addClass('hidden');
+				},1300
+			);
+		},1800
+	);
+}
+
+function saveSummaryField () {
+	$('.save_notice.summary.start').removeClass('hidden');
+	clearTimeout(saveComplete);
+	saveComplete = setTimeout(
+		function(){
+			$('.save_notice.summary.start').addClass('hidden');
+			$('.save_notice.summary.finish').removeClass('hidden');
+			hideSaveComplete = setTimeout(
+				function(){
+					$('.save_notice.summary.finish').addClass('hidden');
+				},1300
+			);
+		},1800
+	);
+}
+
+function charCount (val) {
+	summaryCharCount = val.value.length;
+	$('#character_count').text(140 - summaryCharCount + " remaining");
+	if (summaryCharCount >= 50) {
+		descriptionComplete();
+	}
+}
+
+function showPhotosTooltip () {
+	if (summaryCharCount >= 50) {
+		$('.tooltip.next.photos').removeClass('hidden');
+	}
 }
 
 /* ==========================================================================
@@ -200,11 +247,41 @@ $("input[type=file]").change(function () {
    Details section
    ========================================================================== */
 
+var amenitiesCompleteCount = 0;
+
 function detailsSet () {
 	$('.status_icon.details.complete').removeClass('hidden');
 	$('.tooltip.next.details').addClass('perma-hidden');
-	sectionCompleteCount++;
+	if (amenitiesCompleteCount == 0) {
+		sectionCompleteCount++;
+		amenitiesCompleteCount++;
+	}
 	activatePublishAbility();
+}
+
+function saveAmenities () {
+	$('.save_notice.amenities.start').removeClass('hidden');
+	clearTimeout(saveComplete);
+	saveComplete = setTimeout(
+		function(){
+			$('.save_notice.amenities.start').addClass('hidden');
+			$('.save_notice.amenities.finish').removeClass('hidden');
+			hideSaveComplete = setTimeout(
+				function(){
+					$('.save_notice.amenities.finish').addClass('hidden');
+				},1300
+			);
+		},1000
+	);
+}
+
+function makeBold (val) {
+	if ($(val).parent('label').hasClass('bold')) {
+		$(val).parent('label').removeClass('bold');
+	}
+	else {
+		$(val).parent('label').addClass('bold');
+	}
 }
 
 
@@ -282,6 +359,33 @@ $('.photo_area').hover(
 	}
 );
 
+$('.checkbox.internet').hover(
+	function() {
+		$('.help_container.internet').removeClass('hidden');
+	},
+	function() {
+		$('.help_container.internet').addClass('hidden');
+	}
+);
+
+$('.checkbox.wireless').hover(
+	function() {
+		$('.help_container.wireless').removeClass('hidden');
+	},
+	function() {
+		$('.help_container.wireless').addClass('hidden');
+	}
+);
+
+$('.checkbox.kitchen').hover(
+	function() {
+		$('.help_container.kitchen').removeClass('hidden');
+	},
+	function() {
+		$('.help_container.kitchen').addClass('hidden');
+	}
+);
+
 /* ==========================================================================
    Publish section
    ========================================================================== */
@@ -292,7 +396,7 @@ function activatePublishAbility () {
 	if(sectionCompleteCount >= 4) {
 		$('.btn.pink.publish').removeClass('disabled');
 		$('.btn.pink.publish').addClass('animated tada');
-		$('#publish_cta').addClass('hidden');
+		$('#publish_cta').addClass('perma-hidden');
 		$('#publish_cta_complete').removeClass('hidden');
 	}
 }

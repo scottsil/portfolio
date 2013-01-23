@@ -308,17 +308,17 @@ a {
 #publish_cta_complete {
     margin-top: 268px;
     text-align: center;
-    background: url('../img/publish_arrow.png') no-repeat 135px 0px;
+    background: url('../img/publish_arrow.png') no-repeat 152px 6px;
 }
 
 #publish_cta_complete h3 {
     text-align: left;
-    margin: 0px 0px 18px 34px;
+    margin: 0px 0px 25px 51px;
     -webkit-transform: rotate(-3deg);
     color: #7f7f7f;
     font-size: 25px;
     line-height: 23px;
-    padding-top: 22px;
+    padding-top: 12px;
 }
 
 .tooltip.next.description {
@@ -416,6 +416,18 @@ a {
     margin-top: 262px;
 }
 
+.help_container.internet {
+    margin-top: 146px;
+}
+
+.help_container.wireless {
+    margin-top: 175px;
+}
+
+.help_container.kitchen {
+    margin-top: 82px;
+}
+
 .help_arrow {
     width: 0;
     height: 0;
@@ -488,7 +500,7 @@ a {
 }
 
 #details_content {
-    width: 717px;
+    width: 410px;
     margin: 20px 26px;
     float: left;
 }
@@ -505,6 +517,10 @@ a {
     background: #fff url('../img/publish_ui.png') no-repeat 100px 50px;
     width: 100%;
     height: 100%;
+}
+
+.section_header.collapsed {
+    background: url('../img/collapsed_arrow.png') no-repeat 393px 31px;
 }
 
 .section_header h2 {
@@ -690,9 +706,10 @@ label span {
 }
 
 #character_count {
-    margin: 5px 10px 0px 0px;
+    margin: 0px 0px 0px 0px;
     font-size: 15px;
     color: grey;
+    font-weight: normal;
 }
 
 .help_container.title {
@@ -701,6 +718,21 @@ label span {
 
 .help_container.description {
     margin-top: 105px;
+}
+
+.save_notice {
+    color: #8f9699;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.save_notice.start {
+    margin-left: 4px;
+}
+
+.save_notice.header {
+    margin-top: 13px;
+    font-weight: bold;
 }
 
 
@@ -742,13 +774,52 @@ input[type=file] {
 }
 
 /* ==========================================================================
-   Photos section styles
+   Details section styles
    ========================================================================== */
+
+.amenities_section {
+    margin: 30px 0px 0px 25px;
+    width: 385px;
+    height: 150px;
+}
+
+.amenities_section.extras {
+    height: 213px;
+}
+
+.amenities_section.special {
+    height: 120px;
+    margin-bottom: 40px;
+}
+
+.amenities_section h3 {
+    margin: 0px 0px 15px 0px;
+}
+
+.amenities_list {
+    padding: 0px 0px 0px 0px;
+    width: 190px;
+    float: left;
+}
 
 label.checkbox {
     font-weight: normal;
-    font-size: 15px;
+    font-size: 14px;
+    margin-bottom: 3px;
 }
+
+.checkbox.more_info.internet {
+    background: url('../img/more_info.png') no-repeat 80px 5px;
+}
+
+.checkbox.more_info.wireless {
+    background: url('../img/more_info.png') no-repeat 138px 5px;
+}
+
+.checkbox.more_info.kitchen {
+    background: url('../img/more_info.png') no-repeat 78px 5px;
+}
+
 
 
 /* ==========================================================================
@@ -836,6 +907,32 @@ label.checkbox {
             animation-delay: 1.3s;
 }
 
+.animated.save_notice.start.fadeIn {
+    -webkit-animation-duration: 0.4s;
+       -moz-animation-duration: 0.4s;
+        -ms-animation-duration: 0.4s;
+         -o-animation-duration: 0.4s;
+            animation-duration: 0.4s;
+    -webkit-animation-delay: 0s;
+       -moz-animation-delay: 0s;
+        -ms-animation-delay: 0s;
+         -o-animation-delay: 0s;
+            animation-delay: 0s;
+}
+
+.animated.save_notice.finish.fadeOut {
+    -webkit-animation-duration: 0.8s;
+       -moz-animation-duration: 0.8s;
+        -ms-animation-duration: 0.8s;
+         -o-animation-duration: 0.8s;
+            animation-duration: 0.8s;
+    -webkit-animation-delay: 0.5s;
+       -moz-animation-delay: 0.5s;
+        -ms-animation-delay: 0.5s;
+         -o-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+}
+
 .animated.pulse.btn.pink {
     -webkit-animation-delay: 2.8s;
        -moz-animation-delay: 2.8s;
@@ -845,11 +942,11 @@ label.checkbox {
 }
 
 .animated.tada.btn.pink.publish {
-    -webkit-animation-delay: 1s;
-       -moz-animation-delay: 1s;
-        -ms-animation-delay: 1s;
-         -o-animation-delay: 1s;
-            animation-delay: 1s;
+    -webkit-animation-delay: 0.6s;
+       -moz-animation-delay: 0.6s;
+        -ms-animation-delay: 0.6s;
+         -o-animation-delay: 0.6s;
+            animation-delay: 0.6s;
 }
 
 
@@ -869,6 +966,14 @@ label.checkbox {
     font-style: normal;
     line-height: normal;
     font-family: SignPainterMedium, sans-serif;
+}
+
+.pink {
+    color: #e21586;
+}
+
+.dkpink {
+    color: #bf0265;
 }
 
 input, select, textarea {
@@ -1033,12 +1138,12 @@ input:focus, select:focus, textarea:focus {
 input[type="checkbox"] {
     background: #ffffff;
     -webkit-appearance: none;
-    height: 19px;
-    width: 19px;
+    height: 18px;
+    width: 18px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    margin-right: 4px;
+    margin-right: 2px;
 }
 
 input[type="checkbox"]:checked {
@@ -1084,6 +1189,10 @@ input[type="checkbox"]:checked {
 .perma-hidden {
     display: none !important;
     visibility: hidden;
+}
+
+.bold {
+    font-weight: bold !important;
 }
 
 /*
