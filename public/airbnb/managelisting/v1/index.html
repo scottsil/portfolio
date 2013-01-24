@@ -110,19 +110,18 @@
                             <span class="save_notice header first overview start hidden fadeIn pink right">
                                 Saving...
                             </span>
-                            <span class="save_notice header overview finish hidden animated fadeOut pink right">
+                            <span class="save_notice header first overview finish hidden animated fadeOut pink right">
                                 Saved!
                             </span>
-                            <h2>Overview</h2>
-                            <h4>About your listing in just a few words...</h4>
+                            <h2>Overview<span> (Required)</span></h2>
+                            <h4>Write a title and short summary of your listing.</h4>
                             <hr>
                         </div>
                         <div class="description_field_container">
                             <label>Title</label>
                             <input class="description_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveOverviewFields();" value="Private room in San Francisco"></input>
-                            <label>140 Character Summary</label>
-                            <textarea class="description_field three_line no_bottom" onfocus="showDescriptionHelp();" maxlength="140" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
-                             <span id="character_count" class="right">140 remaining</span>
+                            <label>Summary</label>
+                            <textarea class="description_field four_line no_bottom" onfocus="showDescriptionHelp();" maxlength="200" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
                         </div>
                         <a href="#" class="collapsible_section_header" onclick="showDescriptionSection();">
                             <div class="section_header description collapsed">
@@ -133,36 +132,20 @@
                                 <span class="save_notice header space finish hidden animated fadeOut pink right">
                                     Saved!
                                 </span>
-                                <h2>The Space</h2>
-                                <h4>A more detailed overview of your listing.</h4>
+                                <h2>Details<span> (Optional)</span></h2>
+                                <h4>A more detailed overview of your listing and neighborhood.</h4>
                                 <hr>
                             </div>
                         </a>
                         <div class="description_field_container space hidden">
-                            <label>Overview</label>
+                            <label>About the Space</label>
                             <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideSpaceOverviewHelp();" onkeyup="saveSpaceFields();"></textarea>
-                            <label>Access</label>
+                            <label>Guest Access & Privacy</label>
                             <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideSpaceAccessHelp();" onkeyup="saveSpaceFields();"></textarea>
-                        </div>
-                        <a href="#" class="collapsible_section_header" onclick="showNeighborhoodSection();">
-                            <div class="section_header neighborhood collapsed">
-                                <hr>
-                                <span class="save_notice header neighborhood start hidden fadeIn pink right">
-                                    Saving...
-                                </span>
-                                <span class="save_notice header neighborhood finish hidden animated fadeOut pink right">
-                                    Saved!
-                                </span>
-                                <h2>The Neighborhood</h2>
-                                <h4>A more detailed overview of your listing.</h4>
-                                <hr>
-                            </div>
-                        </a>
-                        <div class="description_field_container neighborhood hidden">
-                            <label>Overview</label>
-                            <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideNeighborhoodOverviewHelp();" onkeyup="saveNeighborhoodFields();"></textarea>
+                            <label>About the Neighborhood</label>
+                            <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideSpaceOverviewHelp();" onkeyup="saveSpaceFields();"></textarea>
                             <label>Getting Around</label>
-                            <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideNeighborhoodAroundHelp();" onkeyup="saveNeighborhoodFields();"></textarea>
+                            <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideSpaceAccessHelp();" onkeyup="saveSpaceFields();"></textarea>
                         </div>
                     </div>
                     <div id="description_help">
@@ -173,8 +156,14 @@
                         </div>
                         <div class="help_container description animated fadeInRight hidden">
                             <div class="help_arrow"></div>
-                            <h3>Write a short summary</h3>
-                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
+                            <h3>Write a 100 character summary</h3>
+                            <div id="summary_bar_container" class="bar-container bar-well">
+                                <div id="summary_bar" class="bar yellow"></div>
+                            </div>
+                            <div id="arrow_count_summary">
+                                <span id="character_count">0</span>
+                            </div>
+                            <p>What makes your place unique? Provide guests a quick overview of your listing and neighborhood.<br><br>Must be at least 100 characters (and no more than 200).</p>
                         </div>
                     </div>
                 </div>

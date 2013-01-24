@@ -204,7 +204,9 @@ function chooseCalendarAgain() {
 var saveComplete;
 var hideSaveComplete;
 var summaryCharCount;
+var summaryBarWidth;
 var descriptionCompleteCount = 0;
+var summaryArrowPosition;
 
 function descriptionComplete () {
 	$('.status_icon.description.complete').removeClass('hidden');
@@ -266,14 +268,25 @@ function saveNeighborhoodFields () {
 
 function charCount (val) {
 	summaryCharCount = val.value.length;
-	$('#character_count').text(140 - summaryCharCount + " remaining");
-	if (summaryCharCount >= 50) {
+	summaryBarWidth = (100 * (summaryCharCount/200));
+	summaryArrowPosition = (243 * (summaryCharCount/200));
+	$('#character_count').text(summaryCharCount);
+	$('#summary_bar').width(summaryBarWidth + '%');
+	$('#arrow_count_summary').css('padding-left', summaryArrowPosition);
+	if (summaryCharCount >= 100) {
 		descriptionComplete();
+		$('#summary_bar').removeClass('yellow');
+		$('#summary_bar').addClass('green');
 	}
+	if (summaryCharCount < 100) {
+		$('#summary_bar').removeClass('green');
+		$('#summary_bar').addClass('yellow');
+	}
+
 }
 
 function showPhotosTooltip () {
-	if (summaryCharCount >= 50) {
+	if (summaryCharCount >= 100) {
 		$('.tooltip.next.photos').removeClass('hidden');
 	}
 }

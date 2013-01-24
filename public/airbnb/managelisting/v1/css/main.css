@@ -563,6 +563,13 @@ a {
     margin: 19px 0px 0px 0px;
 }
 
+.section_header h2 span {
+    font-size: 18px;
+    font-weight: normal;
+    color: #cccccc;
+    margin-left: 5px;
+}
+
 .section_header.first h2 {
     margin: 0px;
 }
@@ -572,7 +579,7 @@ a {
     font-weight: normal;
     line-height: 22px;
     color: #333333;
-    margin: 0px 0px 16px 0px;
+    margin: 2px 0px 16px 0px;
 }
 
 .collapsible_section_header {
@@ -728,6 +735,7 @@ label {
 label span {
     color: #8f9699;
     font-weight: normal;
+    font-size: 14px;
 }
 
 .description_field_container {
@@ -749,6 +757,10 @@ label span {
     height: 73px;
 }
 
+.description_field.four_line {
+    height: 95px;
+}
+
 .description_field.seven_line {
     height: 167px;
 }
@@ -758,10 +770,29 @@ label span {
 }
 
 #character_count {
-    margin: -4px 0px 0px 0px;
-    font-size: 13px;
-    color: grey;
-    font-weight: normal;
+    margin: 0px;
+    font-size: 12px;
+    color: #b9b9b9;
+    text-shadow: 0px 1px #ffffff;
+    font-weight: bold;
+    background: url(../img/icons/arrow_up_small2.png) no-repeat 0px 2px;
+    padding-left: 9px;
+}
+
+#summary_bar_container {
+    width: 255px;
+}
+
+#arrow_count_summary {
+    width: 255px;
+    height: 10px;
+    margin: 5px 0px 0px 7px;
+    -webkit-transition: padding-left 2s;
+    -moz-transition: padding-left 2s;
+    -ms-transition: padding-left 2s;
+    -o-transition: padding-left 2s;
+    transition: padding-left 2s;
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .help_container.title {
@@ -770,6 +801,10 @@ label span {
 
 .help_container.description {
     margin-top: 196px;
+}
+
+.help_container.description p {
+    margin-top: 18px;
 }
 
 .save_notice {
@@ -791,6 +826,9 @@ label span {
     font-weight: bold;
 }
 
+.save_notice.space, .save_notice.neighborhood {
+    margin-right: 40px;
+}
 
 /* ==========================================================================
    Photos section styles
@@ -961,6 +999,19 @@ label.checkbox {
         -ms-animation-delay: 1.3s;
          -o-animation-delay: 1.3s;
             animation-delay: 1.3s;
+}
+
+.animated.tooltip.next.photos  {
+    -webkit-animation-duration: 0.85s;
+       -moz-animation-duration: 0.85s;
+        -ms-animation-duration: 0.85s;
+         -o-animation-duration: 0.85s;
+            animation-duration: 0.85s;
+    -webkit-animation-delay: 0.8s;
+       -moz-animation-delay: 0.8s;
+        -ms-animation-delay: 0.8s;
+         -o-animation-delay: 0.8s;
+            animation-delay: 0.8s;
 }
 
 .animated.save_notice.start.fadeIn {
@@ -1208,6 +1259,61 @@ input[type="checkbox"]:checked {
     background-position: center center;
     background-image: url('../img/check.png');
     -webkit-background-size: 18px 18px;
+}
+
+.bar-container.bar-well {
+    -webkit-box-shadow: inset 0 1px 0px rgba(0,0,0,0.11),0 1px 0 #fff;
+    box-shadow: inset 0 1px 0px rgba(0,0,0,0.11),0 1px 0 #fff;
+    background-color: #d7d7d7;
+    background-image: -webkit-linear-gradient(bottom, #e1e1e1,#d7d7d7);
+    background-image: -moz-linear-gradient(bottom, #e1e1e1,#d7d7d7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe1e1e1', endColorstr='#ffd7d7d7', GradientType=0);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.bar-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bar-container .bar.yellow {
+    border-color: #e0b518 #d2a70c #c59a01;
+    background-color: #fced85;
+    background-color: #f3c714;
+    background: -webkit-linear-gradient(top, #fced85 0%, #fde54c 49%, #fdda43 51%, #f3c714 100%);
+    background: -moz-linear-gradient(top, #fced85 0%, #fde54c 50%, #fdda43 50.1%, #f3c714 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffced85', endColorstr='#fff3c714', GradientType=0);
+}
+
+.bar-container .bar.green {
+    border-color: #50b003 #4aa202 #429201;
+    background-color: #5dc907;
+    background-color: #4fac04;
+    background: -webkit-linear-gradient(top, #5dc907 0%, #57b906 49%, #50ad06 51%, #4fac04 100%);
+    background: -moz-linear-gradient(top, #5dc907 0%, #57b906 50%, #50ad06 50.1%, #4fac04 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5dc907', endColorstr='#ff4fac04', GradientType=0);
+}
+
+.bar-container .bar {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    height: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: inset 0 0 0.2em rgba(255,255,255,0.5),0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: inset 0 0 0.2em rgba(255,255,255,0.5),0 1px 2px rgba(0,0,0,0.15);
+    -webkit-transition: width 2s;
+    -moz-transition: width 2s;
+    -ms-transition: width 2s;
+    -o-transition: width 2s;
+    transition: width 2s;
+    width: 0;
+    min-width: 10px;
+    max-width: 100%;
 }
 
 /* ==========================================================================
