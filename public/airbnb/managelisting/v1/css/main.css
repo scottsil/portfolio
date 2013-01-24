@@ -175,6 +175,12 @@ a {
     box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
 }
 
+#nav_calendar.hover {
+    background: url('../img/icons/calendar_hover.png') no-repeat 23px 25px;
+    color: #e21586;
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
+}
+
 #nav_calendar.active {
     background: #1EAFFC url('../img/icons/calendar_active.png') no-repeat 23px 25px;
     color: #ffffff;
@@ -192,6 +198,12 @@ a {
     border-bottom: 1px solid #e5e5e5;
     vertical-align: middle;
     line-height: 80px;
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
+}
+
+#nav_description.hover {
+    background: url('../img/icons/description_hover.png') no-repeat 23px 26px;
+    color: #e21586;
     box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
 }
 
@@ -215,6 +227,12 @@ a {
     box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
 }
 
+#nav_photos.hover {
+    background: url('../img/icons/photos_hover.png') no-repeat 23px 24px;
+    color: #e21586;
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
+}
+
 #nav_photos.active {
     background: #1EAFFC url('../img/icons/photos_active.png') no-repeat 23px 24px;
     color: #ffffff;
@@ -232,6 +250,12 @@ a {
     border-bottom: 1px solid #e5e5e5;
     vertical-align: middle;
     line-height: 80px;
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
+}
+
+#nav_details.hover {
+    background: url('../img/icons/details_hover.png') no-repeat 23px 23px;
+    color: #e21586;
     box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
 }
 
@@ -466,8 +490,8 @@ a {
 }
 
 #description_content {
-    width: 497px;
-    margin: 30px 36px;
+    width: 517px;
+    margin: 20px 26px;
     float: left;
 }
 
@@ -523,6 +547,14 @@ a {
     background: url('../img/collapsed_arrow.png') no-repeat 393px 31px;
 }
 
+.section_header.description.collapsed, .section_header.neighborhood.collapsed {
+    background: url('../img/collapsed_arrow.png') no-repeat 495px 31px;
+}
+
+.section_header.description.open, .section_header.neighborhood.open {
+    background: url('../img/open_arrow.png') no-repeat 490px 35px;
+}
+
 .section_header h2 {
     font-size: 20px;
     font-weight: bold;
@@ -541,6 +573,10 @@ a {
     line-height: 22px;
     color: #333333;
     margin: 0px 0px 16px 0px;
+}
+
+.collapsible_section_header {
+    color: #ccc;
 }
 
 
@@ -683,7 +719,7 @@ a {
 
 label {
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     line-height: 20px;
     margin-bottom: 10px;
@@ -694,30 +730,46 @@ label span {
     font-weight: normal;
 }
 
-#listing_title {
-    margin-bottom: 30px;
-    width: 478px;
+.description_field_container {
+    width: 468px;
+    margin: 40px auto 65px auto;
 }
 
-#listing_description {
-    width: 478px;
+.description_field_label {
+
+}
+
+.description_field {
+    width: 450px;
+    margin-bottom: 30px;
     line-height: 24px;
+}
+
+.description_field.three_line {
     height: 73px;
 }
 
+.description_field.seven_line {
+    height: 167px;
+}
+
+.description_field.no_bottom {
+    margin-bottom: 8px;
+}
+
 #character_count {
-    margin: 0px 0px 0px 0px;
-    font-size: 15px;
+    margin: -4px 0px 0px 0px;
+    font-size: 13px;
     color: grey;
     font-weight: normal;
 }
 
 .help_container.title {
-    margin-top: 6px;
+    margin-top: 96px;
 }
 
 .help_container.description {
-    margin-top: 105px;
+    margin-top: 196px;
 }
 
 .save_notice {
@@ -730,8 +782,12 @@ label span {
     margin-left: 4px;
 }
 
-.save_notice.header {
+.save_notice.header.first {
     margin-top: 13px;
+}
+
+.save_notice.header {
+    margin-top: 17px;
     font-weight: bold;
 }
 

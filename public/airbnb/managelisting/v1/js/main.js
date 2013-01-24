@@ -6,7 +6,7 @@ $(document).ready(function() {
 	$("#manage_listing_content").width(($(window).width()) - 1 - ($("#manage_listing_nav").width()));
 	$("#site_content").height(($(window).height()) - ($("#manage_listing_header").height()) - ($("#airbnb_site_header").height()));
 	$("#calendar_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#calendar_content").width()));
-	$("#description_help").width(($("#manage_listing_content").width()) - 72 - 1 - 52 - ($("#description_content").width()));
+	$("#description_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#description_content").width()));
 	$("#photos_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#photos_content").width()));
 	$("#details_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#details_content").width()));
 	$("#calendar_help, #description_help, #photos_help, #details_help").css('min-height', ($("#site_content").height() - 40));
@@ -21,7 +21,7 @@ function resizeContent() {
 	$("#manage_listing_content").width(($(window).width()) - 1 - ($("#manage_listing_nav").width()));
 	$("#site_content").height(($(window).height()) - ($("#manage_listing_header").height()) - ($("#airbnb_site_header").height()));
 	$("#calendar_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#calendar_content").width()));
-	$("#description_help").width(($("#manage_listing_content").width()) - 72 - 1 - 52 - ($("#description_content").width()));
+	$("#description_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#description_content").width()));
 	$("#photos_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#photos_content").width()));
 	$("#details_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#details_content").width()));
 	$("#calendar_help, #description_help, #photos_help, #details_help").css('min-height', ($("#site_content").height() - 40));
@@ -80,6 +80,42 @@ function showPublish() {
 	$('#publish_incomplete').removeClass('hidden');
 	$('#calendar_availability, .available_info').removeClass('animated');
 }
+
+$('#nav_calendar').hover(
+	function() {
+		$('#nav_calendar').addClass('hover');
+	},
+	function() {
+		$('#nav_calendar').removeClass('hover');
+	}
+);
+
+$('#nav_description').hover(
+	function() {
+		$('#nav_description').addClass('hover');
+	},
+	function() {
+		$('#nav_description').removeClass('hover');
+	}
+);
+
+$('#nav_photos').hover(
+	function() {
+		$('#nav_photos').addClass('hover');
+	},
+	function() {
+		$('#nav_photos').removeClass('hover');
+	}
+);
+
+$('#nav_details').hover(
+	function() {
+		$('#nav_details').addClass('hover');
+	},
+	function() {
+		$('#nav_details').removeClass('hover');
+	}
+);
 
 
 /* ==========================================================================
@@ -180,32 +216,48 @@ function descriptionComplete () {
 	activatePublishAbility();
 }
 
-function saveTitleField () {
-	$('.save_notice.title.start').removeClass('hidden');
+function saveOverviewFields () {
+	$('.save_notice.overview.start').removeClass('hidden');
 	clearTimeout(saveComplete);
 	saveComplete = setTimeout(
 		function(){
-			$('.save_notice.title.start').addClass('hidden');
-			$('.save_notice.title.finish').removeClass('hidden');
+			$('.save_notice.overview.start').addClass('hidden');
+			$('.save_notice.overview.finish').removeClass('hidden');
 			hideSaveComplete = setTimeout(
 				function(){
-					$('.save_notice.title.finish').addClass('hidden');
+					$('.save_notice.overview.finish').addClass('hidden');
 				},1300
 			);
 		},1800
 	);
 }
 
-function saveSummaryField () {
-	$('.save_notice.summary.start').removeClass('hidden');
+function saveSpaceFields () {
+	$('.save_notice.space.start').removeClass('hidden');
 	clearTimeout(saveComplete);
 	saveComplete = setTimeout(
 		function(){
-			$('.save_notice.summary.start').addClass('hidden');
-			$('.save_notice.summary.finish').removeClass('hidden');
+			$('.save_notice.space.start').addClass('hidden');
+			$('.save_notice.space.finish').removeClass('hidden');
 			hideSaveComplete = setTimeout(
 				function(){
-					$('.save_notice.summary.finish').addClass('hidden');
+					$('.save_notice.space.finish').addClass('hidden');
+				},1300
+			);
+		},1800
+	);
+}
+
+function saveNeighborhoodFields () {
+	$('.save_notice.neighborhood.start').removeClass('hidden');
+	clearTimeout(saveComplete);
+	saveComplete = setTimeout(
+		function(){
+			$('.save_notice.neighborhood.start').addClass('hidden');
+			$('.save_notice.neighborhood.finish').removeClass('hidden');
+			hideSaveComplete = setTimeout(
+				function(){
+					$('.save_notice.neighborhood.finish').addClass('hidden');
 				},1300
 			);
 		},1800
@@ -224,6 +276,35 @@ function showPhotosTooltip () {
 	if (summaryCharCount >= 50) {
 		$('.tooltip.next.photos').removeClass('hidden');
 	}
+}
+
+function showDescriptionSection () {
+	if ($('.description_field_container.space').hasClass('hidden')) {
+		$('.description_field_container.space').removeClass('hidden');
+		$('.section_header.description').removeClass('collapsed');
+		$('.section_header.description').addClass('open');
+	}
+	else {
+		$('.description_field_container.space').addClass('hidden');
+		$('.section_header.description').removeClass('open');
+		$('.section_header.description').addClass('collapsed');
+		resizeContent();
+	}
+	$("#description_help").height(($("#description_content").height()));
+}
+
+function showNeighborhoodSection () {
+	if ($('.description_field_container.neighborhood').hasClass('hidden')) {
+		$('.description_field_container.neighborhood').removeClass('hidden');
+		$('.section_header.neighborhood').removeClass('collapsed');
+		$('.section_header.neighborhood').addClass('open');
+	}
+	else {
+		$('.description_field_container.neighborhood').addClass('hidden');
+		$('.section_header.neighborhood').removeClass('open');
+		$('.section_header.neighborhood').addClass('collapsed');
+	}
+	$("#description_help").height(($("#description_content").height()));
 }
 
 /* ==========================================================================

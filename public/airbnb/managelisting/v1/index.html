@@ -31,7 +31,7 @@
                 <a href="#" onclick="hideDescriptionTooltip();"><div class="tooltip next description animated fadeInRight hidden" ></div></a>
                 <a href="#" onclick="hidePhotosTooltip();"><div class="tooltip next photos animated fadeInRight hidden" ></div></a>
                 <a href="#" onclick="hideDetailsTooltip();"><div class="tooltip next details animated fadeInRight hidden" ></div></a>
-                <ul>
+                <ul class="nav_list">
                     <a href="#" onclick="showCalendar();"><li id="nav_calendar"><div style="display:inline-block;padding-top: 24px;line-height:17px;">Calendar<br>& Prices</div><div class="status_icon calendar"><div class="status_icon calendar complete animated pulse hidden"></div></li></a>
                     <a href="#" onclick="showDescription();"><li id="nav_description">Description<div class="status_icon description"><div class="status_icon description complete animated pulse hidden"></div></li></a>
                     <a href="#" onclick="showPhotos();"><li id="nav_photos">Photos<div class="status_icon photos"><div class="status_icon photos complete animated pulse hidden"></div></li></a>
@@ -106,23 +106,64 @@
                 </div>
                 <div id='description' class="section hidden">
                     <div id="description_content">
-                        <span class="save_notice title start hidden fadeIn right">
-                            Saving...
-                        </span>
-                        <span class="save_notice title finish hidden animated fadeOut right">
-                            Saved!
-                        </span>
-                        <label>Title</label>
-                        <input id="listing_title" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveTitleField();" value="Private room in San Francisco"></input>
-                        <span class="save_notice summary start hidden fadeIn right">
-                            Saving...
-                        </span>
-                        <span class="save_notice summary finish hidden animated fadeOut right">
-                            Saved!
-                        </span>
-                        <label>140 Character Summary</label>
-                        <textarea id="listing_description" onfocus="showDescriptionHelp();" maxlength="140" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveSummaryField(); charCount(this);"></textarea>
-                        <span id="character_count" class="right">140 remaining</span>
+                        <div class="section_header first">
+                            <span class="save_notice header first overview start hidden fadeIn pink right">
+                                Saving...
+                            </span>
+                            <span class="save_notice header overview finish hidden animated fadeOut pink right">
+                                Saved!
+                            </span>
+                            <h2>Overview</h2>
+                            <h4>About your listing in just a few words...</h4>
+                            <hr>
+                        </div>
+                        <div class="description_field_container">
+                            <label>Title</label>
+                            <input class="description_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveOverviewFields();" value="Private room in San Francisco"></input>
+                            <label>140 Character Summary</label>
+                            <textarea class="description_field three_line no_bottom" onfocus="showDescriptionHelp();" maxlength="140" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
+                             <span id="character_count" class="right">140 remaining</span>
+                        </div>
+                        <a href="#" class="collapsible_section_header" onclick="showDescriptionSection();">
+                            <div class="section_header description collapsed">
+                                <hr>
+                                <span class="save_notice header space start hidden fadeIn pink right">
+                                    Saving...
+                                </span>
+                                <span class="save_notice header space finish hidden animated fadeOut pink right">
+                                    Saved!
+                                </span>
+                                <h2>The Space</h2>
+                                <h4>A more detailed overview of your listing.</h4>
+                                <hr>
+                            </div>
+                        </a>
+                        <div class="description_field_container space hidden">
+                            <label>Overview</label>
+                            <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideSpaceOverviewHelp();" onkeyup="saveSpaceFields();"></textarea>
+                            <label>Access</label>
+                            <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideSpaceAccessHelp();" onkeyup="saveSpaceFields();"></textarea>
+                        </div>
+                        <a href="#" class="collapsible_section_header" onclick="showNeighborhoodSection();">
+                            <div class="section_header neighborhood collapsed">
+                                <hr>
+                                <span class="save_notice header neighborhood start hidden fadeIn pink right">
+                                    Saving...
+                                </span>
+                                <span class="save_notice header neighborhood finish hidden animated fadeOut pink right">
+                                    Saved!
+                                </span>
+                                <h2>The Neighborhood</h2>
+                                <h4>A more detailed overview of your listing.</h4>
+                                <hr>
+                            </div>
+                        </a>
+                        <div class="description_field_container neighborhood hidden">
+                            <label>Overview</label>
+                            <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideNeighborhoodOverviewHelp();" onkeyup="saveNeighborhoodFields();"></textarea>
+                            <label>Getting Around</label>
+                            <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideNeighborhoodAroundHelp();" onkeyup="saveNeighborhoodFields();"></textarea>
+                        </div>
                     </div>
                     <div id="description_help">
                         <div class="help_container title animated fadeInRight hidden">
