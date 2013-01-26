@@ -130,11 +130,26 @@ a {
     background-color: #666666;
 }
 
-#header_title {
+.header_link {
     line-height: 60px;
     color: white;
-    padding-left: 23px;
+    padding: 0px 23px;
+}
+
+#header_title {
     font-size: 20px;
+}
+
+#view_link {
+    float: right;
+}
+
+#listing_visibility {
+    float: right;
+}
+
+#listing_visibility span {
+    color: #a3a3a3;
 }
 
 /* ==========================================================================
@@ -376,8 +391,51 @@ a {
    Publish section styles
    ========================================================================== */
 
+#publish_incomplete {
+    width: 100%;
+    height: 100%;
+}
 
+.publish_container {
+    width: 465px;
+    height: 100%;
+    margin: 65px auto;
+    text-align: center;
+}
 
+.publish_container h1 {
+    font-size: 56px;
+    margin-bottom: 16px;
+    color: #666666;
+}
+
+.publish_container p {
+    font-size: 16px;
+    margin: 10px 0px 42px 0px;
+}
+
+.add_profile_photo {
+    cursor: pointer;
+}
+
+.input-prepend {
+    margin: 24px 119px 12px 119px;
+    width: 100%;
+    height: 40px;
+}
+
+#verify_phone {
+    width: 223px;
+    height: 26px;
+    margin: 2px 120px 12px 120px;
+    background: url('../img/verify_phone.png') no-repeat 0px 0px;
+}
+
+.final_publish.btn {
+    position: fixed;
+    top: 723px;
+    left: 663px;
+}
 
 
 /* ==========================================================================
@@ -424,6 +482,10 @@ a {
     max-width: 265px;
 }
 
+.help_container h4 {
+    margin: 0px 3px;
+}
+
 .help_container.calendar {
     margin-top: 258px;
 }
@@ -440,16 +502,32 @@ a {
     margin-top: 262px;
 }
 
+.help_container.address {
+    margin-top: 97px;
+}
+
+.help_container.amenities_common {
+    margin-top: 625px;
+}
+
+.help_container.amenities_extras {
+    margin-top: 805px;
+}
+
+.help_container.amenities_special {
+    margin-top: 1048px;
+}
+
 .help_container.internet {
-    margin-top: 146px;
+    margin-top: 687px;
 }
 
 .help_container.wireless {
-    margin-top: 175px;
+    margin-top: 716px;
 }
 
 .help_container.kitchen {
-    margin-top: 82px;
+    margin-top: 623px;
 }
 
 .help_arrow {
@@ -537,18 +615,18 @@ a {
     background-color: #fafafa;
 }
 
-#publish_incomplete {
-    background: #fff url('../img/publish_ui.png') no-repeat 100px 50px;
-    width: 100%;
-    height: 100%;
-}
-
 .section_header.collapsed {
     background: url('../img/collapsed_arrow.png') no-repeat 393px 31px;
+    opacity: 0.3;
 }
 
 .section_header.description.collapsed, .section_header.neighborhood.collapsed {
     background: url('../img/collapsed_arrow.png') no-repeat 495px 31px;
+}
+
+.section_header.open {
+    background: url('../img/open_arrow.png') no-repeat 388px 35px;
+    opacity: 1.0 !important;
 }
 
 .section_header.description.open, .section_header.neighborhood.open {
@@ -585,6 +663,7 @@ a {
 .collapsible_section_header {
     color: #ccc;
 }
+
 
 
 /* ==========================================================================
@@ -914,13 +993,73 @@ label.checkbox {
     background: url('../img/more_info.png') no-repeat 78px 5px;
 }
 
+.details_field_container.roomsbeds {
+    width: 250px;
+    height: 353px;
+    margin: 45px 0px 52px 25px;
+    background: url('../img/rooms&beds.png') no-repeat 0px 0px;
+}
 
+.details_field_container.address.all {
+    width: 361px;
+    height: 468px;
+    margin: 40px auto 65px auto;
+}
+
+.details_field_container.address {
+    width: 361px;
+    margin: 40px auto 65px auto;
+}
+
+.details_field_container.address.all {
+    height: 468px;
+}
+
+.details_field_container.address.local_only {
+    height: 267px;
+}
+
+.details_field {
+    width: 342px;
+}
+
+.details_field.country {
+    height: 38px;
+    width: 360px;
+}
+
+#city_state_country {
+    margin: 10px 0px 10px 0px;
+}
+
+label a {
+    font-weight: normal;
+    font-size: 14px;
+    color: #1d95cb;
+}
+
+label a:hover {
+    text-decoration: underline;
+}
 
 /* ==========================================================================
    Animation styles
    ========================================================================== */
 
-.animated.fadeInUp {
+.animated.fadeInUp.address {
+    -webkit-animation-duration: 0.8s;
+       -moz-animation-duration: 0.8s;
+        -ms-animation-duration: 0.8s;
+         -o-animation-duration: 0.8s;
+            animation-duration: 0.8s;
+    -webkit-animation-delay: .2s;
+       -moz-animation-delay: .2s;
+        -ms-animation-delay: .2s;
+         -o-animation-delay: .2s;
+            animation-delay: .2s;
+}
+
+.animated.fadeInUp.publish_cta {
     -webkit-animation-duration: 1s;
        -moz-animation-duration: 1s;
         -ms-animation-duration: 1s;
@@ -931,6 +1070,19 @@ label.checkbox {
         -ms-animation-delay: .3s;
          -o-animation-delay: .3s;
             animation-delay: .3s;
+}
+
+.animated.fadeInUp.verify_phone {
+    -webkit-animation-duration: 0.7s;
+       -moz-animation-duration: 0.7s;
+        -ms-animation-duration: 0.7s;
+         -o-animation-duration: 0.7s;
+            animation-duration: 0.7s;
+    -webkit-animation-delay: 0s;
+       -moz-animation-delay: 0s;
+        -ms-animation-delay: 0s;
+         -o-animation-delay: 0s;
+            animation-delay: 0s;
 }
 
 .animated.publish_cta.pulse {
@@ -1040,7 +1192,7 @@ label.checkbox {
             animation-delay: 0.5s;
 }
 
-.animated.pulse.btn.pink {
+.animated.pulse.btn.pink.nopublish {
     -webkit-animation-delay: 2.8s;
        -moz-animation-delay: 2.8s;
         -ms-animation-delay: 2.8s;
@@ -1056,7 +1208,13 @@ label.checkbox {
             animation-delay: 0.6s;
 }
 
-
+.animated.pulse.btn.pink.final_publish {
+    -webkit-animation-delay: 0s;
+       -moz-animation-delay: 0s;
+        -ms-animation-delay: 0s;
+         -o-animation-delay: 0s;
+            animation-delay: 0s;
+}
 
 
 /* ==========================================================================
@@ -1242,6 +1400,10 @@ input:focus, select:focus, textarea:focus {
     border-color: #316d01 #3d8502 #49a003;
 }
 
+.btn.large {
+    font-size: 18px;
+}
+
 input[type="checkbox"] {
     background: #ffffff;
     -webkit-appearance: none;
@@ -1314,6 +1476,25 @@ input[type="checkbox"]:checked {
     width: 0;
     min-width: 10px;
     max-width: 100%;
+}
+
+.input-prepend .add-on, .input-append .add-on {
+    float: left;
+    display: block;
+    width: auto;
+    min-width: 26px;
+    height: 30px;
+    margin-right: -1px;
+    padding: 4px 5px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color: #999;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 3px 0px 0px 3px;
 }
 
 /* ==========================================================================

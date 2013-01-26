@@ -39,6 +39,7 @@ function showCalendar() {
 	$("#nav_calendar").addClass("active");
 	$("#calendar_help").height(($("#calendar_content").height()));
 	$("#publish_cta").removeClass('hidden');
+	activatePublishAbility();
 }
 
 function showDescription() {
@@ -50,6 +51,7 @@ function showDescription() {
 	$("#publish_cta").removeClass('hidden').addClass('animated fadeInUp');
 	$('#calendar_availability, .available_info').removeClass('animated');
 	$('.tooltip.next.description').addClass('hidden');
+	activatePublishAbility();
 }
 
 function showPhotos() {
@@ -61,6 +63,7 @@ function showPhotos() {
 	$("#publish_cta").removeClass('hidden').addClass('animated fadeInUp');
 	$('#calendar_availability, .available_info').removeClass('animated');
 	$('.tooltip.next.photos').addClass('hidden');
+	activatePublishAbility();
 }
 
 function showDetails() {
@@ -72,6 +75,7 @@ function showDetails() {
 	$("#publish_cta").removeClass('hidden').addClass('animated fadeInUp');
 	$('#calendar_availability, .available_info').removeClass('animated');
 	$('.tooltip.next.details').addClass('hidden');
+	activatePublishAbility();
 }
 
 function showPublish() {
@@ -79,6 +83,7 @@ function showPublish() {
 	$('#nav_calendar, #nav_description, #nav_photos, #nav_details').removeClass("active");
 	$('#publish_incomplete').removeClass('hidden');
 	$('#calendar_availability, .available_info').removeClass('animated');
+	$('#publish_cta_complete').addClass('hidden');
 }
 
 $('#nav_calendar').hover(
@@ -114,6 +119,19 @@ $('#nav_details').hover(
 	},
 	function() {
 		$('#nav_details').removeClass('hover');
+	}
+);
+
+$('.section_header.collapsed').hover(
+	function() {
+		$(this).animate({
+			opacity: 1
+		}, 100)
+	},
+	function() {
+		$(this).animate({
+			opacity: 0.3
+		}, 100)
 	}
 );
 
@@ -325,10 +343,10 @@ function showNeighborhoodSection () {
    ========================================================================== */
 
 function triggerFileUpload () {
-	$('.btn.add_photos').click($('input[type=file]').trigger('click'));
+	$('.btn.add_photos').click($('input[type=file].listing_photos').trigger('click'));
 }
 
-$("input[type=file]").change(function () {
+$("input[type=file].listing_photos").change(function () {
     $('.photo_area').addClass('all');
     $('.photo_area').addClass('all');
     $('.status_icon.photos.complete, .tooltip.next.details').removeClass('hidden');
@@ -346,11 +364,29 @@ var amenitiesCompleteCount = 0;
 function detailsSet () {
 	$('.status_icon.details.complete').removeClass('hidden');
 	$('.tooltip.next.details').addClass('perma-hidden');
+	$('#preview_address_incomplete').addClass('hidden');
+	$('#preview_address_complete').removeClass('hidden');
 	if (amenitiesCompleteCount == 0) {
 		sectionCompleteCount++;
 		amenitiesCompleteCount++;
 	}
 	activatePublishAbility();
+}
+
+function saveAddressFields () {
+	$('.save_notice.address.start').removeClass('hidden');
+	clearTimeout(saveComplete);
+	saveComplete = setTimeout(
+		function(){
+			$('.save_notice.address.start').addClass('hidden');
+			$('.save_notice.address.finish').removeClass('hidden');
+			hideSaveComplete = setTimeout(
+				function(){
+					$('.save_notice.address.finish').addClass('hidden');
+				},1300
+			);
+		},1000
+	);
 }
 
 function saveAmenities () {
@@ -376,6 +412,52 @@ function makeBold (val) {
 	else {
 		$(val).parent('label').addClass('bold');
 	}
+}
+
+function showRoomsBedsSection () {
+	if ($('.details_field_container.roomsbeds').hasClass('hidden')) {
+		$('.details_field_container.roomsbeds').removeClass('hidden');
+		$('.section_header.roomsbeds').removeClass('collapsed');
+		$('.section_header.roomsbeds').addClass('open');
+	}
+	else {
+		$('.details_field_container.roomsbeds').addClass('hidden');
+		$('.section_header.roomsbeds').removeClass('open');
+		$('.section_header.roomsbeds').addClass('collapsed');
+		resizeContent();
+	}
+	$("#details_help").height(($("#details_content").height()));
+}
+
+function showAmenitiesSection () {
+	if ($('.amenities_section').hasClass('hidden')) {
+		$('.amenities_section').removeClass('hidden');
+		$('.section_header.amenities').removeClass('collapsed');
+		$('.section_header.amenities').addClass('open');
+	}
+	else {
+		$('.amenities_section').addClass('hidden');
+		$('.section_header.amenities').removeClass('open');
+		$('.section_header.amenities').addClass('collapsed');
+		resizeContent();
+	}
+	$("#details_help").height(($("#details_content").height()));
+}
+
+function showEditCity () {
+	if ($('#edit_city_state_country').hasClass('hidden')) {
+		$('#edit_city_state_country').removeClass('hidden');
+		$('#city_state_country').addClass('hidden');
+		$('.details_field_container.address').addClass('all');
+		$('.details_field_container.address').removeClass('local_only');
+	}
+	else {
+		$('#edit_city_state_country').addClass('hidden');
+		$('#city_state_country').removeClass('hidden');
+		$('.details_field_container.address').removeClass('all');
+		$('.details_field_container.address').addClass('local_only');
+	}
+	$("#details_help").height(($("#details_content").height()));
 }
 
 
@@ -453,32 +535,42 @@ $('.photo_area').hover(
 	}
 );
 
-$('.checkbox.internet').hover(
+$('.details_field_container.address').hover(
 	function() {
-		$('.help_container.internet').removeClass('hidden');
+		$('.help_container.address').removeClass('hidden');
 	},
 	function() {
-		$('.help_container.internet').addClass('hidden');
+		$('.help_container.address').addClass('hidden');
 	}
 );
 
-$('.checkbox.wireless').hover(
+$('.amenities_section.common').hover(
 	function() {
-		$('.help_container.wireless').removeClass('hidden');
+		$('.help_container.amenities_common').removeClass('hidden');
 	},
 	function() {
-		$('.help_container.wireless').addClass('hidden');
+		$('.help_container.amenities_common').addClass('hidden');
 	}
 );
 
-$('.checkbox.kitchen').hover(
+$('.amenities_section.extras').hover(
 	function() {
-		$('.help_container.kitchen').removeClass('hidden');
+		$('.help_container.amenities_extras').removeClass('hidden');
 	},
 	function() {
-		$('.help_container.kitchen').addClass('hidden');
+		$('.help_container.amenities_extras').addClass('hidden');
 	}
 );
+
+$('.amenities_section.special').hover(
+	function() {
+		$('.help_container.amenities_special').removeClass('hidden');
+	},
+	function() {
+		$('.help_container.amenities_special').addClass('hidden');
+	}
+);
+
 
 /* ==========================================================================
    Publish section
@@ -495,8 +587,22 @@ function activatePublishAbility () {
 	}
 }
 
+function triggerProfileUpload () {
+	$('.add_profile_photo').click($('input[type=file].profile_photos').trigger('click'));
+}
 
+$("input[type=file].profile_photos").change(function () {
+    $('img.add_profile_photo').addClass('hidden');
+    $('img.profile_photo').removeClass('hidden');
+});
 
+function showVerifyPhone () {
+	$('#verify_phone').removeClass('hidden');
+}
 
+function activateFinalPublish () {
+	$('.final_publish.btn').removeClass('disabled');
+	$('.final_publish.btn').addClass('animated pulse');
+}
 
 

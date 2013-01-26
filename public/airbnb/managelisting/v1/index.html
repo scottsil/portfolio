@@ -25,7 +25,9 @@
         </div>
         <div id="site_content">
             <div id="manage_listing_header">
-                <span id="header_title">Private room in San Francisco</span>
+                <span class="header_link" id="header_title">Private room in San Francisco</span>
+                <span class="header_link" id="listing_visibility"><span>ON |</span> OFF</span>
+                <span class="header_link" id="view_link">Preview listing »</span>
             </div>
             <div id="manage_listing_nav">
                 <a href="#" onclick="hideDescriptionTooltip();"><div class="tooltip next description animated fadeInRight hidden" ></div></a>
@@ -39,7 +41,7 @@
                 </ul>
                 <div id="publish_cta" class="hidden publish_cta animated fadeInUp">
                     <h3 class="signpainter">Complete all<br>to publish!</h3>
-                    <a href="#" onclick="" class="btn pink disabled" style="font-size:18px;">Publish</a>
+                    <a href="#" onclick="" class="btn pink nopublish disabled" style="font-size:18px;">Publish</a>
                 </div>
                 <div id="publish_cta_complete" class="hidden publish_cta_complete animated pulse">
                     <h3 class="signpainter">You're ready<br>to publish!</h3>
@@ -113,7 +115,7 @@
                             <span class="save_notice header first overview finish hidden animated fadeOut pink right">
                                 Saved!
                             </span>
-                            <h2>Overview<span> (Required)</span></h2>
+                            <h2>Overview</h2>
                             <h4>Write a title and short summary of your listing.</h4>
                             <hr>
                         </div>
@@ -169,7 +171,7 @@
                 </div>
                 <div id='photos' class="section hidden">
                     <div id="photos_content">
-                        <div id="photo_uploader"><a href="#" onclick="triggerFileUpload();" class="btn add_photos">+ Add Photos</a><input type="file" multiple></div>
+                        <div id="photo_uploader"><a href="#" onclick="triggerFileUpload();" class="btn add_photos">+ Add Photos</a><input type="file" class="listing_photos" multiple></div>
                         <div class="photo_area">
                         </div>
                     </div>
@@ -188,121 +190,189 @@
                 </div>
                 <div id='details' class="section hidden">
                     <div id="details_content">
-                        <div class="section_header first">
-                            <span class="save_notice header amenities start hidden fadeIn pink right">
+                        <div class="section_header first address">
+                            <span class="save_notice header address start hidden fadeIn pink right">
                                 Saving...
                             </span>
-                            <span class="save_notice header amenities finish hidden animated fadeOut pink right">
+                            <span class="save_notice header address finish hidden animated fadeOut pink right">
                                 Saved!
                             </span>
-                            <h2>Amenities</h2>
-                            <h4>Set your listing's availability and nightly prices.</h4>
-                            <hr>
-                        </div>
-                        <div class="amenities_section common">
-                            <h3>Most Common</h3>
-                            <div class="amenities_list">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> TV
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Cable TV
-                                </label>
-                                <label class="checkbox more_info internet">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Internet
-                                </label>
-                                <label class="checkbox more_info wireless">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Wireless Internet
-                                </label>
-                            </div>
-                            <div class="amenities_list">
-                                <label class="checkbox more_info kitchen">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Kitchen
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Air conditioning
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Heating
-                                </label>
-                            </div>
-                        </div>
-                        <div class="amenities_section extras">
-                            <h3>Extras</h3>
-                            <div class="amenities_list">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Hot tub
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Pool
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Breakfast
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Doorman
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Gym
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Indoor fireplace
-                                </label>
-                            </div>
-                            <div class="amenities_list">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Washer
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Dryer
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Free parking on premise
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Elevator in building
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Buzzer/wireless intercom
-                                </label>
-                            </div>
-                        </div>
-                        <div class="amenities_section special">
-                            <h3>Special Attributes</h3>
-                            <div class="amenities_list">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Family/Kid friendly
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Suitable for Events
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Handicap Accessible
-                                </label>
-                            </div>
-                            <div class="amenities_list">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this); makeBold(this);"> Smoking Allowed
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="detailsSet(); saveAmenities(); makeBold(this);"> Pets Allowed
-                                </label>
-                            </div>
-                        </div>
-                        <div class="section_header collapsed">
-                            <hr>
-                            <h2>Rooms & Beds</h2>
-                            <h4>What’s available in your listing?</h4>
-                            <hr>
-                        </div>
-                        <div class="section_header collapsed">
-                            <hr>
                             <h2>Address</h2>
                             <h4>The street address of your listing.</h4>
                             <hr>
                         </div>
+                        <div class="details_field_container address local_only">
+                            <label>Address Line 1</label>
+                            <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value=""></input>
+                            <label>Address Line 2</label>
+                            <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value=""></input>
+                            <label>Postal / Zip Code</label>
+                            <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="" onkeypress="detailsSet();"></input>
+                            <div id="city_state_country" class=""><label>San Francisco, CA, USA  |  <a href="#" onclick="showEditCity();">edit</a></label></div>
+                            <div id="edit_city_state_country" class="hidden">
+                                <label>City</label>
+                                <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="San Francisco"></input>
+                                <label>State</label>
+                                <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="CA"></input>
+                                <label>Country</label>
+                                <select class="details_field country">
+                                    <option>United States</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                    <option>Option 4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <a href="#" class="collapsible_section_header" onclick="showAmenitiesSection();">
+                            <div class="section_header amenities collapsed">
+                                <hr>
+                                <span class="save_notice header space amenities start hidden fadeIn pink right">
+                                    Saving...
+                                </span>
+                                <span class="save_notice header space amenities finish hidden animated fadeOut pink right">
+                                    Saved!
+                                </span>
+                                <h2>Amenities<span> (Optional)</span></h2>
+                                <h4>Set your listing's availability and nightly prices.</h4>
+                                <hr>
+                            </div>
+                        </a>
+                        <div class="amenities_section hidden common">
+                            <h3>Most Common</h3>
+                            <div class="amenities_list">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> TV
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Cable TV
+                                </label>
+                                <label class="checkbox more_info internet">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Internet
+                                </label>
+                                <label class="checkbox more_info wireless">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Wireless Internet
+                                </label>
+                            </div>
+                            <div class="amenities_list">
+                                <label class="checkbox more_info kitchen">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Kitchen
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Air conditioning
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Heating
+                                </label>
+                            </div>
+                        </div>
+                        <div class="amenities_section hidden extras">
+                            <h3>Extras</h3>
+                            <div class="amenities_list">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Hot tub
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Pool
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Breakfast
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Doorman
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Gym
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Indoor fireplace
+                                </label>
+                            </div>
+                            <div class="amenities_list">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Washer
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Dryer
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Free parking on premise
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Elevator in building
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Buzzer/wireless intercom
+                                </label>
+                            </div>
+                        </div>
+                        <div class="amenities_section hidden special">
+                            <h3>Special Attributes</h3>
+                            <div class="amenities_list">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Family/Kid friendly
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Suitable for Events
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Handicap Accessible
+                                </label>
+                            </div>
+                            <div class="amenities_list">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Smoking Allowed
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="doc-checkbox" id="doc-checkbox" onclick="saveAmenities(); makeBold(this);"> Pets Allowed
+                                </label>
+                            </div>
+                        </div>
+
+                        <a href="#" class="collapsible_section_header" onclick="showRoomsBedsSection();">
+                            <div class="section_header roomsbeds collapsed">
+                                <hr>
+                                <span class="save_notice header roomsbeds start hidden fadeIn pink right">
+                                    Saving...
+                                </span>
+                                <span class="save_notice header roomsbeds finish hidden animated fadeOut pink right">
+                                    Saved!
+                                </span>
+                                <h2>Rooms & Beds<span> (Optional)</span></h2>
+                                <h4>What’s available in your listing?</h4>
+                                <hr>
+                            </div>
+                        </a>
+                        <div class="details_field_container roomsbeds hidden">
+                        </div>
                     </div>
                     <div id="details_help">
+                        <div class="help_container address animated fadeInRight hidden">
+                            <div class="help_arrow"></div>
+                            <h3>Public Listing View</h3>
+                            <p>Your address will remain private.</p>
+                            <p id="preview_address_incomplete"><strong>Complete your address</strong> to preview how your listing will appear to unconfirmed guests.</p>
+                            <div id="preview_address_complete" class="animated fadeInUp address hidden">
+                                <p>This is how your listing will appear to unconfirmed guests.</p>
+                                <img src="img/address_public_preview.png" width="265px" height="265px">
+                                <h4>Greenwich St, San Francisco, CA 94133, United States</h4>
+                            </div>
+                        </div>
+                        <div class="help_container amenities_common animated fadeInRight hidden">
+                            <div class="help_arrow"></div>
+                            <p><strong>Internet: </strong>wired or wireless</p>
+                            <p><strong>Wireless Internet: </strong>a wireless router guests can access 24/7</p>
+                            <p><strong>Kitchen: </strong>is available for guest use</p>
+                        </div>
+                        <div class="help_container amenities_extras animated fadeInRight hidden">
+                            <div class="help_arrow"></div>
+                            <h3>Extra Amenities</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache.</p>
+                        </div>
+                        <div class="help_container amenities_special animated fadeInRight hidden">
+                            <div class="help_arrow"></div>
+                            <h3>Special Attributes</h3>
+                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache.</p>
+                        </div>
                         <div class="help_container internet animated fadeInRight hidden">
                             <div class="help_arrow"></div>
                             <h3>Internet</h3>
@@ -320,7 +390,21 @@
                         </div>
                     </div>
                 </div>
-                <div id='publish_incomplete' class="section hidden"></div>
+                <div id='publish_incomplete' class="section hidden">
+                    <div class="publish_container">
+                        <h1 class="signpainter">Your listing looks great!</h1>
+                        <p>Just add a profile photo and phone number to publish.</p>
+                        <img src="img/profile_photo_add.png" width="243px" height="250px" class="add_profile_photo" onclick="triggerProfileUpload();">
+                        <img src="img/profile_photo.png" width="243px" height="250px" class="profile_photo hidden" >
+                        <input type="file" class="profile_photos">
+                        <div class="input-prepend">
+                            <span class="add-on">+1</span>
+                            <input type="text" name="doc-textfield1" class="span2" placeholder="xxx-xxx-xxxx" onfocus="showVerifyPhone();" onkeyup="activateFinalPublish();" style="float:left;border-radius: 0px 3px 3px 0px;">
+                        </div>
+                        <div id="verify_phone" class="verify_phone animated fadeInUp hidden"></div>
+                        <a href="#" onclick="" class="btn disabled large pink final_publish">Publish My Listing</a>
+                    </div>
+                </div>
             </div>
         </div>
 
