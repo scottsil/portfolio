@@ -42,12 +42,17 @@
                 </ul>
                 <div id="publish_cta" class="hidden publish_cta animated fadeInUp">
                     <h3 class="signpainter">Complete all<br>to publish!</h3>
-                    <a href="#" onclick="" class="btn pink nopublish disabled" style="font-size:18px;">Publish</a>
+                    <a href="#" onclick="highlightInstructions();" class="btn pink nopublish disabled" style="font-size:18px;">Publish</a>
                 </div>
                 <div id="publish_cta_complete" class="hidden publish_cta_complete animated pulse">
                     <h3 class="signpainter">You're ready<br>to publish!</h3>
                     <a href="#" onclick="showPublish();" class="btn pink publish disabled" style="font-size:18px;">Publish</a>
                 </div>
+                <a href="#" onclick="">
+                    <div id="advanced_options">
+                        Advanced<i class="icon icon-plus"></i>
+                    </div>
+                </a>
             </div>
             <div id="manage_listing_content">
                 <div id="content_shadow"></div>
@@ -91,11 +96,47 @@
                         </div>
                         <div class="section_header">
                             <hr>
+                            <span class="save_notice header price start hidden fadeIn pink right">
+                                Saving...
+                            </span>
+                            <span class="save_notice header price finish hidden animated fadeOut pink right">
+                                Saved!
+                            </span>
                             <h2>Standard Prices</h2>
                             <h4>Set your listing's standard nightly, weekly, and monthly price.</h4>
                             <hr>
                         </div>
                         <div id="standard_prices">
+                            <div class="price_labels">
+                                <div class="price_label">
+                                    <label class="price">Per night</label>
+                                </div>
+                                 <div class="price_label">
+                                    <label class="price">Per week</label>
+                                </div>
+                                <div class="price_label">
+                                    <label class="price">Per month</label>
+                                </div>
+                            </div>
+                            <div class="price_fields">
+                                <div class="input-prepend price">
+                                    <span class="add-on">$</span>
+                                    <input type="text" name="doc-textfield1" class="price_field" value="105" placeholder="105" onkeyup="savePriceFields();" style="float:left;border-radius: 0px 3px 3px 0px;">
+                                </div>
+                                <div class="input-prepend price">
+                                    <span class="add-on">$</span>
+                                    <input type="text" name="doc-textfield1" class="price_field" placeholder="550" onkeyup="savePriceFields();" style="float:left;border-radius: 0px 3px 3px 0px;">
+                                </div>
+                                <div class="input-prepend price">
+                                    <span class="add-on">$</span>
+                                    <input type="text" name="doc-textfield1" class="price_field" placeholder="1600" onkeyup="savePriceFields();" style="float:left;border-radius: 0px 3px 3px 0px;">
+                                </div>
+                            </div>
+                            <div class="price_suggestions">
+                                <h4 class="pink">$105 suggested</h4>
+                                <h4 class="pink">$550 suggested</h4>
+                                <h4 class="pink">$1600 suggested</h4>
+                            </div>
                         </div>
                     </div>
                     <div id="calendar_help">
@@ -128,7 +169,7 @@
                             <label>Title</label>
                             <input class="description_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveOverviewFields(); updateListingTitle(this);" placeholder="Private room in San Francisco"></input>
                             <label>Summary</label>
-                            <textarea class="description_field four_line no_bottom" placeholder="Write 100-200 characters about your listing..." onfocus="showDescriptionHelp();" maxlength="200" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
+                            <textarea class="description_field four_line no_bottom" placeholder="50-200 characters about your listing..." onfocus="showDescriptionHelp();" maxlength="200" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
                         </div>
                         <a href="#" class="collapsible_section_header" onclick="showDescriptionSection();">
                             <div class="section_header description collapsed">
@@ -146,13 +187,13 @@
                         </a>
                         <div class="description_field_container space hidden">
                             <label>About the Space</label>
-                            <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideSpaceOverviewHelp();" onkeyup="saveSpaceFields();"></textarea>
+                            <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideSpaceOverviewHelp();" onkeyup="saveSpaceFields();" placeholder="What's notable about your space and listing?"></textarea>
                             <label>Guest Access & Privacy</label>
-                            <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideSpaceAccessHelp();" onkeyup="saveSpaceFields();"></textarea>
+                            <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideSpaceAccessHelp();" onkeyup="saveSpaceFields();" placeholder="How much privacy will guests have? What will they be sharing?"></textarea>
                             <label>About the Neighborhood</label>
-                            <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideSpaceOverviewHelp();" onkeyup="saveSpaceFields();"></textarea>
+                            <textarea class="description_field seven_line" onfocus="showSpaceOverviewHelp();" onblur="hideSpaceOverviewHelp();" onkeyup="saveSpaceFields();" placeholder="What's attractive and nearby in your neighborhood?"></textarea>
                             <label>Getting Around</label>
-                            <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideSpaceAccessHelp();" onkeyup="saveSpaceFields();"></textarea>
+                            <textarea class="description_field three_line" onfocus="showSpaceAccessHelp();" onblur="hideSpaceAccessHelp();" onkeyup="saveSpaceFields();" placeholder="How can guests get around your neighborhood? Is there parking or public transit nearby?"></textarea>
                         </div>
                     </div>
                     <div id="description_help">
@@ -163,14 +204,14 @@
                         </div>
                         <div class="help_container description animated fadeInRight hidden">
                             <div class="help_arrow"></div>
-                            <h3>Write a 100 character summary</h3>
+                            <h3>Write at least 50 characters</h3>
                             <div id="summary_bar_container" class="bar-container bar-well">
                                 <div id="summary_bar" class="bar yellow"></div>
                             </div>
                             <div id="arrow_count_summary">
                                 <span id="character_count">0</span>
                             </div>
-                            <p>What makes your place unique? Provide guests a quick overview of your listing and neighborhood.<br><br>Must be at least 100 characters (and no more than 200).</p>
+                            <p>Provide guests a quick overview of your listing in no more than 200 characters.</p>
                         </div>
                     </div>
                 </div>
@@ -465,7 +506,7 @@
                         <img src="img/profile_photo_add.png" width="243px" height="250px" class="add_profile_photo" onclick="triggerProfileUpload();">
                         <img src="img/profile_photo.png" width="243px" height="250px" class="profile_photo hidden" >
                         <input type="file" class="profile_photos">
-                        <div class="input-prepend">
+                        <div class="input-prepend phone_number">
                             <span class="add-on">+1</span>
                             <input type="text" name="doc-textfield1" class="span2" placeholder="xxx-xxx-xxxx" onfocus="showVerifyPhone();" onkeyup="activateFinalPublish();" style="float:left;border-radius: 0px 3px 3px 0px;">
                         </div>

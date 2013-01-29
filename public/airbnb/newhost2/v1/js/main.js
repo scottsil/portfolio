@@ -11,6 +11,7 @@ $(document).ready(function() {
 	$("#details_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#details_content").width()));
 	$("#calendar_help, #description_help, #photos_help, #details_help").css('min-height', ($("#site_content").height() - 40));
 	$("#content_shadow").width($("#manage_listing_content").width());
+	$("#advanced_options").css('margin-top', ($("#manage_listing_nav").height() - 117));
 });
 
 $(window).resize(function(){
@@ -26,6 +27,7 @@ function resizeContent() {
 	$("#details_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#details_content").width()));
 	$("#calendar_help, #description_help, #photos_help, #details_help").css('min-height', ($("#site_content").height() - 40));
 	$("#content_shadow").width($("#manage_listing_content").width());
+	$("#advanced_options").css('margin-top', ($("#manage_listing_nav").height() - 117));
 }
 
 /* ==========================================================================
@@ -122,6 +124,15 @@ $('#nav_details').hover(
 	}
 );
 
+$('#advanced_options').hover(
+	function() {
+		$('#advanced_options').addClass('hover');
+	},
+	function() {
+		$('#advanced_options').removeClass('hover');
+	}
+);
+
 $('.section_header.collapsed').hover(
 	function() {
 		$(this).animate({
@@ -214,6 +225,22 @@ function chooseCalendarAgain() {
 	sectionCompleteCount--;
 }
 
+function savePriceFields () {
+	$('.save_notice.price.start').removeClass('hidden');
+	clearTimeout(saveComplete);
+	saveComplete = setTimeout(
+		function(){
+			$('.save_notice.price.start').addClass('hidden');
+			$('.save_notice.price.finish').removeClass('hidden');
+			hideSaveComplete = setTimeout(
+				function(){
+					$('.save_notice.price.finish').addClass('hidden');
+				},1300
+			);
+		},1800
+	)
+}
+
 
 /* ==========================================================================
    Description section
@@ -300,12 +327,12 @@ function charCount (val) {
 	$('#character_count').text(summaryCharCount);
 	$('#summary_bar').width(summaryBarWidth + '%');
 	$('#arrow_count_summary').css('padding-left', summaryArrowPosition);
-	if (summaryCharCount >= 100) {
+	if (summaryCharCount >= 50) {
 		descriptionComplete();
 		$('#summary_bar').removeClass('yellow');
 		$('#summary_bar').addClass('green');
 	}
-	if (summaryCharCount < 100) {
+	if (summaryCharCount < 50) {
 		$('#summary_bar').removeClass('green');
 		$('#summary_bar').addClass('yellow');
 	}
@@ -313,7 +340,7 @@ function charCount (val) {
 }
 
 function showPhotosTooltip () {
-	if (summaryCharCount >= 100) {
+	if (summaryCharCount >= 50) {
 		$('.tooltip.next.photos').removeClass('hidden');
 	}
 }
@@ -586,6 +613,17 @@ $('.amenities_section.special').hover(
    ========================================================================== */
 
 var sectionCompleteCount = 0;
+var restoreHighlightInstructions;
+
+function highlightInstructions () {
+	$('#publish_cta h3').addClass('animated pulse');
+	clearTimeout(restoreHighlightInstructions);
+	restoreHighlightInstructions = setTimeout(
+		function(){
+			$('#publish_cta h3').removeClass('animated pulse');
+		},800
+	);
+}
 
 function activatePublishAbility () {
 	if(sectionCompleteCount >= 4) {
