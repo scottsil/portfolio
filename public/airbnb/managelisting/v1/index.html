@@ -25,6 +25,7 @@
         </div>
         <div id="site_content">
             <div id="manage_listing_header">
+                <a href="http://www.airbnb.com/rooms"><i class="icon icon-arrow-left"></i></a>
                 <span class="header_link" id="header_title">Private room in San Francisco</span>
                 <span class="header_link" id="listing_visibility"><span>ON |</span> OFF</span>
                 <span class="header_link" id="view_link">Preview listing »</span>
@@ -84,6 +85,10 @@
                                 <a href="#" onclick="chooseCalendarAgain();"><span id="back_to_choose_availability" class="onetime" >« choose again</span></a>
                             </div>
                         </div>
+                        <div class="inline-tooltip next description hidden">
+                            <a href="#" class="btn tooltip next right">Write Description <i class="icon icon-arrow-right"></i></a>
+                            Great! Next, write your listing's description.
+                        </div>
                         <div class="section_header">
                             <hr>
                             <h2>Standard Prices</h2>
@@ -121,9 +126,9 @@
                         </div>
                         <div class="description_field_container">
                             <label>Title</label>
-                            <input class="description_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveOverviewFields();" value="Private room in San Francisco"></input>
+                            <input class="description_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveOverviewFields(); updateListingTitle(this);" placeholder="Private room in San Francisco"></input>
                             <label>Summary</label>
-                            <textarea class="description_field four_line no_bottom" onfocus="showDescriptionHelp();" maxlength="200" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
+                            <textarea class="description_field four_line no_bottom" placeholder="Write 100-200 characters about your listing..." onfocus="showDescriptionHelp();" maxlength="200" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
                         </div>
                         <a href="#" class="collapsible_section_header" onclick="showDescriptionSection();">
                             <div class="section_header description collapsed">
@@ -202,19 +207,13 @@
                             <hr>
                         </div>
                         <div class="details_field_container address local_only">
-                            <label>Address Line 1</label>
-                            <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value=""></input>
-                            <label>Address Line 2</label>
-                            <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value=""></input>
-                            <label>Postal / Zip Code</label>
-                            <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="" onkeypress="detailsSet();"></input>
+                            <input class="details_field compound top" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="" placeholder="Street Address"></input>
+                            <input class="details_field compound bottom" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="" placeholder="Apt / Suite / Building (optional)"></input>
+                            <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="" onkeypress="detailsSet();" placeholder="Postal / Zip Code"></input>
                             <div id="city_state_country" class=""><label>San Francisco, CA, USA  |  <a href="#" onclick="showEditCity();">edit</a></label></div>
                             <div id="edit_city_state_country" class="hidden">
-                                <label>City</label>
-                                <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="San Francisco"></input>
-                                <label>State</label>
-                                <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="CA"></input>
-                                <label>Country</label>
+                                <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="San Francisco" placeholder="City"></input>
+                                <input class="details_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveAddressFields();" value="CA" placeholder="State"></input>
                                 <select class="details_field country">
                                     <option>United States</option>
                                     <option>Option 2</option>
@@ -343,6 +342,75 @@
                             </div>
                         </a>
                         <div class="details_field_container roomsbeds hidden">
+                            <label>Bedrooms</label>
+                            <select class="details_field roomsbeds">
+                                <option></option>
+                                <option>1 bedroom</option>
+                                <option>2 bedrooms</option>
+                                <option>3 bedrooms</option>
+                                <option>4 bedrooms</option>
+                                <option>5 bedrooms</option>
+                                <option>6 bedrooms</option>
+                                <option>7 bedrooms</option>
+                                <option>8 bedrooms</option>
+                                <option>9 bedrooms</option>
+                                <option>10 bedrooms</option>
+                            </select>
+                            <label>Beds</label>
+                            <select class="details_field roomsbeds">
+                                <option></option>
+                                <option value="1">1 bed</option>
+                                <option value="2">2 beds</option>
+                                <option value="3">3 beds</option>
+                                <option value="4">4 beds</option>
+                                <option value="5">5 beds</option>
+                                <option value="6">6 beds</option>
+                                <option value="7">7 beds</option>
+                                <option value="8">8 beds</option>
+                                <option value="9">9 beds</option>
+                                <option value="10">10 beds</option>
+                                <option value="11">11 beds</option>
+                                <option value="12">12 beds</option>
+                                <option value="13">13 beds</option>
+                                <option value="14">14 beds</option>
+                                <option value="15">15 beds</option>
+                                <option value="16">16+ beds</option>
+                            </select>
+                            <label>Bed type</label>
+                            <select class="details_field roomsbeds">
+                                <option value="Airbed">Airbed</option>
+                                <option value="Futon">Futon</option>
+                                <option value="Pull-out Sofa">Pull-out Sofa</option>
+                                <option value="Couch">Couch</option>
+                                <option value="Real Bed" selected="selected">Real Bed</option>
+                            </select>
+                            <label>Bathrooms</label>
+                            <select class="details_field roomsbeds">
+                                <option></option>
+                                <option value="0.0">0 bathrooms</option>
+                                <option value="0.5">0.5 bathrooms</option>
+                                <option value="1.0">1 bathroom</option>
+                                <option value="1.5">1.5 bathrooms</option>
+                                <option value="2.0">2 bathrooms</option>
+                                <option value="2.5">2.5 bathrooms</option>
+                                <option value="3.0">3 bathrooms</option>
+                                <option value="3.5">3.5 bathrooms</option>
+                                <option value="4.0">4 bathrooms</option>
+                                <option value="4.5">4.5 bathrooms</option>
+                                <option value="5.0">5 bathrooms</option>
+                                <option value="5.5">5.5 bathrooms</option>
+                                <option value="6.0">6 bathrooms</option>
+                                <option value="6.5">6.5 bathrooms</option>
+                                <option value="7.0">7 bathrooms</option>
+                                <option value="7.5">7.5 bathrooms</option>
+                                <option value="8">8+ bathrooms</option>
+                            </select>
+                            <label>Size</label>
+                            <input class="details_field roomsbeds size"></input>
+                            <select class="details_field roomsbeds">
+                                <option>square feet</option>
+                                <option>square meters</option>
+                            </select>
                         </div>
                     </div>
                     <div id="details_help">
@@ -401,6 +469,7 @@
                             <span class="add-on">+1</span>
                             <input type="text" name="doc-textfield1" class="span2" placeholder="xxx-xxx-xxxx" onfocus="showVerifyPhone();" onkeyup="activateFinalPublish();" style="float:left;border-radius: 0px 3px 3px 0px;">
                         </div>
+                        <div id="verify_phone_placeholder" class=""></div>
                         <div id="verify_phone" class="verify_phone animated fadeInUp hidden"></div>
                         <a href="#" onclick="" class="btn disabled large pink final_publish">Publish My Listing</a>
                     </div>

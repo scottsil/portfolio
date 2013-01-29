@@ -130,6 +130,23 @@ a {
     background-color: #666666;
 }
 
+#manage_listing_header a {
+    padding: 6px 3px 5px 9px;
+    margin: 0px 0px 0px 21px;
+    border-radius: 3px;
+    position: fixed;
+    top: 62px;
+}
+
+#manage_listing_header a:hover {
+    background-color: #e21586;
+}
+
+.icon-arrow-left::before {
+    content: "\f060";
+    color: #ffffff;
+}
+
 .header_link {
     line-height: 60px;
     color: white;
@@ -138,6 +155,7 @@ a {
 
 #header_title {
     font-size: 20px;
+    padding-left: 57px;
 }
 
 #view_link {
@@ -387,6 +405,24 @@ a {
     left: 229px;
 }
 
+.inline-tooltip.next.description {
+    background-color: #e21586;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.3), inset 0px 0px 3px #fff;
+    margin-bottom: 30px;
+    border: 1px solid #e21586;
+}
+
+.btn.tooltip.next {
+    margin: -5px -7px 0px 0px;
+}
+
+.icon-arrow-right::before {
+    content: "\f061";
+}
+
 /* ==========================================================================
    Publish section styles
    ========================================================================== */
@@ -431,10 +467,16 @@ a {
     background: url('../img/verify_phone.png') no-repeat 0px 0px;
 }
 
+#verify_phone_placeholder {
+    width: 223px;
+    height: 26px;
+    margin: 2px 120px 12px 120px;
+}
+
 .final_publish.btn {
-    position: fixed;
-    top: 723px;
-    left: 663px;
+    position: relative;
+    top: 25px;
+    left: 0px;
 }
 
 
@@ -994,10 +1036,9 @@ label.checkbox {
 }
 
 .details_field_container.roomsbeds {
-    width: 250px;
-    height: 353px;
+    width: 310px;
+    height: 440px;
     margin: 45px 0px 52px 25px;
-    background: url('../img/rooms&beds.png') no-repeat 0px 0px;
 }
 
 .details_field_container.address.all {
@@ -1012,15 +1053,32 @@ label.checkbox {
 }
 
 .details_field_container.address.all {
-    height: 468px;
+    height: 277px;
 }
 
 .details_field_container.address.local_only {
-    height: 267px;
+    height: 160px;
 }
 
 .details_field {
     width: 342px;
+}
+
+.details_field.compound.top {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-bottom: -1px;
+}
+
+.details_field.compound.bottom {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top: 1px solid transparent;
+    background: none;
+}
+
+input:focus.details_field.compound.bottom {
+    border-top: 1px solid rgba(237,29,137,0.8);
 }
 
 .details_field.country {
@@ -1028,8 +1086,21 @@ label.checkbox {
     width: 360px;
 }
 
+.details_field.roomsbeds {
+    height: 38px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.details_field.roomsbeds.size {
+    width: 90px;
+    height: 24px;
+    margin-bottom: 25px;
+    margin-right: 8px;
+}
+
 #city_state_country {
-    margin: 10px 0px 10px 0px;
+    margin: 4px 0px 10px 0px;
 }
 
 label a {
@@ -1224,6 +1295,11 @@ label a:hover {
 @font-face {  
   font-family: SignPainterMedium ;  
   src: url(../fonts/signpah1-webfont.ttf) format("truetype");  
+}
+
+@font-face {  
+  font-family: FontAwesome;  
+  src: url(../fonts/fontawesome-webfont.ttf) format("truetype");  
 }  
 
 .signpainter {
@@ -1495,6 +1571,21 @@ input[type="checkbox"]:checked {
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 3px 0px 0px 3px;
+}
+
+.icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+}
+
+.icon::before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
 }
 
 /* ==========================================================================

@@ -225,6 +225,7 @@ var summaryCharCount;
 var summaryBarWidth;
 var descriptionCompleteCount = 0;
 var summaryArrowPosition;
+var listingTitle;
 
 function descriptionComplete () {
 	$('.status_icon.description.complete').removeClass('hidden');
@@ -234,6 +235,14 @@ function descriptionComplete () {
 		descriptionCompleteCount++;
 	}
 	activatePublishAbility();
+}
+
+function updateListingTitle (val) {
+	listingTitle = val.value;
+	$('#header_title').text(listingTitle);
+	if (val.value.length == 0) {
+		$('#header_title').text('Private room in San Francisco');
+	}
 }
 
 function saveOverviewFields () {
@@ -597,6 +606,7 @@ $("input[type=file].profile_photos").change(function () {
 });
 
 function showVerifyPhone () {
+	$('#verify_phone_placeholder').addClass('hidden');
 	$('#verify_phone').removeClass('hidden');
 }
 
