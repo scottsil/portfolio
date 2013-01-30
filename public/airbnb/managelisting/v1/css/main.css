@@ -131,7 +131,7 @@ a {
 }
 
 #manage_listing_header a {
-    padding: 6px 3px 5px 9px;
+    padding: 3px 6px 5px 8px;
     margin: 0px 0px 0px 21px;
     border-radius: 3px;
     position: fixed;
@@ -145,6 +145,7 @@ a {
 .icon-arrow-left::before {
     content: "\f060";
     color: #ffffff;
+    font-size: 18px;
 }
 
 .header_link {
@@ -406,22 +407,49 @@ a {
 }
 
 .inline-tooltip.next.description {
-    background-color: #e21586;
-    color: #ffffff;
-    padding: 20px;
+    color: #fff;
+    padding: 20px 16px 20px 64px;
     border-radius: 5px;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.3), inset 0px 0px 3px #fff;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.3), inset 0px 0px 0px 2px #fff;
     margin-bottom: 30px;
-    border: 1px solid #e21586;
+    border: 3px solid #00b0ff;
+    font-size: 16px;
+    background: #00b0ff url('../img/icons/check_complete.png') no-repeat 16px 12px;
 }
 
 .btn.tooltip.next {
-    margin: -5px -7px 0px 0px;
+    margin-top: -4px;
 }
 
 .icon-arrow-right::before {
     content: "\f061";
 }
+
+#advanced_options {
+    position: fixed;
+    height: 28px;
+    width: 212px;
+    color: #989898;
+    padding: 8px 0px 0px 13px;
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.8);
+    box-shadow: 0px -1px 0px rgba(0,0,0,0.05);
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+
+#advanced_options.hover {
+    color: #e21586;
+}
+
+.icon-plus::before {
+    content: "\f067";
+}
+
+.icon-plus {
+    margin: 1px 0px 0px 128px;
+}
+
 
 /* ==========================================================================
    Publish section styles
@@ -454,7 +482,7 @@ a {
     cursor: pointer;
 }
 
-.input-prepend {
+.input-prepend.phone_number {
     margin: 24px 119px 12px 119px;
     width: 100%;
     height: 40px;
@@ -835,9 +863,45 @@ a {
     width: 502px;
     height: 170px;
     margin: 50px auto;
-    background: url('../img/standard_prices.png');
 }
 
+.price_labels {
+    float: left;
+    margin-top: 10px;
+}
+
+.price_label {
+    width: 100px;
+    height: 16px;
+    margin: 0px 12px 39px 0px;
+}
+
+.input-prepend.price {
+    display: inline-block;
+}
+
+.input-prepend.price input {
+    width: 128px;
+}
+
+.price_fields {
+    width: 205px;
+    float: left;
+}
+
+label.price  {
+    float: right;
+}
+
+.price_suggestions {
+    margin: 10px 0px 10px 0px;
+    width: 180px;
+    float: left;
+}
+
+.price_suggestions h4 {
+    margin: 0px 0px 38px 0px;
+}
 
 
 /* ==========================================================================
@@ -862,6 +926,20 @@ label span {
 .description_field_container {
     width: 468px;
     margin: 40px auto 65px auto;
+}
+
+.description_field_container h4 {
+    margin-top: 6px;
+    color: #959595;
+}
+
+.description_field_container a {
+    text-decoration: underline;
+    color: #959595;
+}
+
+.description_field_container a:hover {
+    color: #e21586;
 }
 
 .description_field_label {
@@ -1141,6 +1219,19 @@ label a:hover {
         -ms-animation-delay: .3s;
          -o-animation-delay: .3s;
             animation-delay: .3s;
+}
+
+.animated.pulse.signpainter {
+    -webkit-animation-duration: 0.8s;
+       -moz-animation-duration: 0.8s;
+        -ms-animation-duration: 0.8s;
+         -o-animation-duration: 0.8s;
+            animation-duration: 0.8s;
+    -webkit-animation-delay: 0s;
+       -moz-animation-delay: 0s;
+        -ms-animation-delay: 0s;
+         -o-animation-delay: 0s;
+            animation-delay: 0s;
 }
 
 .animated.fadeInUp.verify_phone {
