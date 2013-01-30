@@ -343,6 +343,9 @@ function charCount (val) {
 		$('#summary_bar').removeClass('green');
 		$('#summary_bar').addClass('yellow');
 	}
+	if (summaryCharCount == 200) {
+		$('.description_field_container h4').removeClass('hidden');
+	}
 
 }
 
@@ -403,6 +406,7 @@ $("input[type=file].listing_photos").change(function () {
    ========================================================================== */
 
 var amenitiesCompleteCount = 0;
+var bedCount;
 
 function detailsSet () {
 	$('.status_icon.details.complete').removeClass('hidden');
@@ -503,6 +507,21 @@ function showEditCity () {
 	$("#details_help").height(($("#details_content").height()));
 }
 
+function showEditLYS () {
+	$('#edit_accom_room_home').removeClass('hidden');
+	$('#accom_room_home').addClass('hidden');
+	$("#details_help").height(($("#details_content").height()));
+}
+
+function checkBedCount (val) {
+	bedCount = val.value;
+	if (bedCount == 1) {
+		$('#bed_type').removeClass('hidden');
+	}
+	if (bedCount != 1) {
+		$('#bed_type').addClass('hidden');
+	}
+}
 
 /* ==========================================================================
    Tooltips

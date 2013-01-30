@@ -714,7 +714,7 @@ a {
 .section_header h2 span {
     font-size: 18px;
     font-weight: normal;
-    color: #cccccc;
+    color: #ababab;
     margin-left: 5px;
 }
 
@@ -763,12 +763,11 @@ a {
     padding-top: 60px;
 }
 
-#calendar_availability h5 {
+#choose_availability h5 {
     text-align: center;
     padding-top: 0px;
     font-weight: normal;
-    font-size: 13px;
-    color: #cccccc;
+    font-size: 14px;
 }
 
 #availability_options {
@@ -931,6 +930,11 @@ label span {
 .description_field_container h4 {
     margin-top: 6px;
     color: #959595;
+    font-weight: normal;
+}
+
+.description_field_container h4 span {
+    font-weight: bold;
 }
 
 .description_field_container a {
@@ -939,7 +943,7 @@ label span {
 }
 
 .description_field_container a:hover {
-    color: #e21586;
+    color: #1d95cb;
 }
 
 .description_field_label {
@@ -970,11 +974,11 @@ label span {
 
 #character_count {
     margin: 0px;
-    font-size: 12px;
-    color: #b9b9b9;
+    font-size: 16px;
+    color: #a7a7a7;
     text-shadow: 0px 1px #ffffff;
     font-weight: bold;
-    background: url(../img/icons/arrow_up_small2.png) no-repeat 0px 2px;
+    background: url(../img/icons/arrow_up_small3.png) no-repeat 0px 4px;
     padding-left: 9px;
 }
 
@@ -1078,6 +1082,7 @@ input[type=file] {
 
 .amenities_section.extras {
     height: 213px;
+    margin-bottom: 40px;
 }
 
 .amenities_section.special {
@@ -1177,6 +1182,19 @@ input:focus.details_field.compound.bottom {
     margin-right: 8px;
 }
 
+#bed_number {
+    float: left;
+}
+
+#bed_type {
+    margin-left: 130px;
+    margin-top: 30px;
+}
+
+#bed_type select {
+    margin-top: 30px;
+}
+
 #city_state_country {
     margin: 4px 0px 10px 0px;
 }
@@ -1190,6 +1208,11 @@ label a {
 label a:hover {
     text-decoration: underline;
 }
+
+.address img {
+    margin-left: -5px;
+}
+
 
 /* ==========================================================================
    Animation styles

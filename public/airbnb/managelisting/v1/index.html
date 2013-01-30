@@ -142,8 +142,8 @@
                     <div id="calendar_help">
                         <div class="help_container calendar animated fadeInRight hidden">
                             <div class="help_arrow"></div>
-                            <h3>Configure your calendar</h3>
-                            <p>Post-ironic kogi magna iphone accusamus seitan sartorial occupy. Odd future mcsweeney's mustache craft beer ut cliche. Salvia sint squid occaecat vinyl. Anim quis tonx cardigan, pariatur lomo small batch meh. Narwhal anim deserunt, aliqua pop-up ut quinoa banksy.</p>
+                            <h3>Setup your calendar</h3>
+                            <p>Choose the starting availability of your listing. You can change this setting at any time.</p>
                         </div>
                         <div class="help_container prices animated fadeInRight hidden">
                             <div class="help_arrow"></div>
@@ -170,8 +170,8 @@
                             <input class="description_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveOverviewFields(); updateListingTitle(this);" placeholder="Private room in San Francisco"></input>
                             <label>Summary</label>
                             <textarea class="description_field four_line no_bottom" placeholder="50-200 characters about your listing..." onfocus="showDescriptionHelp();" maxlength="200" onblur="hideDescriptionHelp();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
-                            <h4>
-                                Want to write more? You can add details after publishing your listing.<br>Or if you prefer, you can <a href="#" onclick="addDescriptionDetails();">add details now</a>.
+                            <h4 class="animated fadeInUp hidden">
+                                <span>Want to write more?</span> You can add details after publishing your listing.<br>Or if you prefer, you can <a href="#" onclick="addDescriptionDetails();">write a detailed description now</a>.
                             </h4>
                         </div>
                         <a href="#" class="collapsible_section_header" onclick="showDescriptionSection();">
@@ -183,7 +183,7 @@
                                 <span class="save_notice header space finish hidden animated fadeOut pink right">
                                     Saved!
                                 </span>
-                                <h2>Details<span> (Optional)</span></h2>
+                                <h2>Details<span> Optional</span></h2>
                                 <h4>A more detailed overview of your listing and neighborhood.</h4>
                                 <hr>
                             </div>
@@ -207,7 +207,7 @@
                         </div>
                         <div class="help_container description animated fadeInRight hidden">
                             <div class="help_arrow"></div>
-                            <h3>Write at least 50 characters</h3>
+                            <h3>Write a 50-200 character summary</h3>
                             <div id="summary_bar_container" class="bar-container bar-well">
                                 <div id="summary_bar" class="bar yellow"></div>
                             </div>
@@ -275,7 +275,7 @@
                                 <span class="save_notice header space amenities finish hidden animated fadeOut pink right">
                                     Saved!
                                 </span>
-                                <h2>Amenities<span> (Optional)</span></h2>
+                                <h2>Amenities<span> Optional</span></h2>
                                 <h4>Set your listing's availability and nightly prices.</h4>
                                 <hr>
                             </div>
@@ -348,7 +348,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="amenities_section hidden special">
+                        <div class="hidden special">
                             <h3>Special Attributes</h3>
                             <div class="amenities_list">
                                 <label class="checkbox">
@@ -380,14 +380,14 @@
                                 <span class="save_notice header roomsbeds finish hidden animated fadeOut pink right">
                                     Saved!
                                 </span>
-                                <h2>Rooms & Beds<span> (Optional)</span></h2>
+                                <h2>Rooms & Beds<span> Optional</span></h2>
                                 <h4>What’s available in your listing?</h4>
                                 <hr>
                             </div>
                         </a>
                         <div class="details_field_container roomsbeds hidden">
-                            <label>Bedrooms</label>
-                            <select class="details_field roomsbeds">
+                            <label class="hidden">Bedrooms</label>
+                            <select class="details_field roomsbeds hidden">
                                 <option></option>
                                 <option>1 bedroom</option>
                                 <option>2 bedrooms</option>
@@ -400,35 +400,41 @@
                                 <option>9 bedrooms</option>
                                 <option>10 bedrooms</option>
                             </select>
-                            <label>Beds</label>
-                            <select class="details_field roomsbeds">
-                                <option></option>
-                                <option value="1">1 bed</option>
-                                <option value="2">2 beds</option>
-                                <option value="3">3 beds</option>
-                                <option value="4">4 beds</option>
-                                <option value="5">5 beds</option>
-                                <option value="6">6 beds</option>
-                                <option value="7">7 beds</option>
-                                <option value="8">8 beds</option>
-                                <option value="9">9 beds</option>
-                                <option value="10">10 beds</option>
-                                <option value="11">11 beds</option>
-                                <option value="12">12 beds</option>
-                                <option value="13">13 beds</option>
-                                <option value="14">14 beds</option>
-                                <option value="15">15 beds</option>
-                                <option value="16">16+ beds</option>
-                            </select>
-                            <label>Bed type</label>
-                            <select class="details_field roomsbeds">
-                                <option value="Airbed">Airbed</option>
-                                <option value="Futon">Futon</option>
-                                <option value="Pull-out Sofa">Pull-out Sofa</option>
-                                <option value="Couch">Couch</option>
-                                <option value="Real Bed" selected="selected">Real Bed</option>
-                            </select>
-                            <label>Bathrooms</label>
+                            <div style="height: 93px;">
+                                <div id="bed_number">
+                                    <label>Beds</label>
+                                    <select class="details_field roomsbeds" onchange="checkBedCount(this);">
+                                        <option></option>
+                                        <option value="1">1 bed</option>
+                                        <option value="2">2 beds</option>
+                                        <option value="3">3 beds</option>
+                                        <option value="4">4 beds</option>
+                                        <option value="5">5 beds</option>
+                                        <option value="6">6 beds</option>
+                                        <option value="7">7 beds</option>
+                                        <option value="8">8 beds</option>
+                                        <option value="9">9 beds</option>
+                                        <option value="10">10 beds</option>
+                                        <option value="11">11 beds</option>
+                                        <option value="12">12 beds</option>
+                                        <option value="13">13 beds</option>
+                                        <option value="14">14 beds</option>
+                                        <option value="15">15 beds</option>
+                                        <option value="16">16+ beds</option>
+                                    </select>
+                                </div>
+                                <div id="bed_type" class="hidden">
+                                    <select class="details_field roomsbeds">
+                                        <option value="" selected="selected">Bed type...</option>
+                                        <option value="Airbed">Airbed</option>
+                                        <option value="Futon">Futon</option>
+                                        <option value="Pull-out Sofa">Pull-out Sofa</option>
+                                        <option value="Couch">Couch</option>
+                                        <option value="Real Bed">Real Bed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label>Bathrooms <span>guests can access</span></label>
                             <select class="details_field roomsbeds">
                                 <option></option>
                                 <option value="0.0">0 bathrooms</option>
@@ -449,9 +455,25 @@
                                 <option value="7.5">7.5 bathrooms</option>
                                 <option value="8">8+ bathrooms</option>
                             </select>
-                            <label>Size</label>
-                            <input class="details_field roomsbeds size"></input>
-                            <select class="details_field roomsbeds">
+
+                            <div id="accom_room_home" class=""><label>2 guests, Private Room, Apartment  |  <a href="#" onclick="showEditLYS();">edit</a></label></div>
+                            <div id="edit_accom_room_home" class="hidden">
+                                <label>Accommodates</label>
+                                <select class="details_field roomsbeds">
+                                    <option value="0.0">2   </option>
+                                </select>
+                                <label>Room Type</label>
+                                <select class="details_field roomsbeds">
+                                    <option value="0.0">Private room</option>
+                                </select>
+                                <label>Home Type</label>
+                                <select class="details_field roomsbeds">
+                                    <option value="0.0">Apartment</option>
+                                </select>
+                            </div>
+                            <label class="hidden">Size</label>
+                            <input class="details_field roomsbeds size hidden"></input>
+                            <select class="details_field roomsbeds hidden">
                                 <option>square feet</option>
                                 <option>square meters</option>
                             </select>
@@ -462,11 +484,13 @@
                             <div class="help_arrow"></div>
                             <h3>Public Listing View</h3>
                             <p>Your address will remain private.</p>
-                            <p id="preview_address_incomplete"><strong>Complete your address</strong> to preview how your listing will appear to unconfirmed guests.</p>
-                            <div id="preview_address_complete" class="animated fadeInUp address hidden">
-                                <p>This is how your listing will appear to unconfirmed guests.</p>
+                            <div id="preview_address_incomplete" class="address">
+                                <img src="img/address_add.png" width="265px" height="265px">
+                            </div>
+                            <div id="preview_address_complete" class="address animated fadeIn hidden">
                                 <img src="img/address_public_preview.png" width="265px" height="265px">
                                 <h4>Greenwich St, San Francisco, CA 94133, United States</h4>
+                                <p>This is how your listing will appear to unconfirmed guests.</p>
                             </div>
                         </div>
                         <div class="help_container amenities_common animated fadeInRight hidden">
