@@ -11,7 +11,7 @@ $(document).ready(function() {
 	$("#details_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#details_content").width()));
 	$("#calendar_help, #description_help, #photos_help, #details_help").css('min-height', ($("#site_content").height() - 40));
 	$("#content_shadow").width($("#manage_listing_content").width());
-	$("#advanced_options").css('margin-top', ($("#manage_listing_nav").height() - 117));
+	$("#advanced_options").css('top', ($("#manage_listing_nav").height() + 70));
 });
 
 $(window).resize(function(){
@@ -27,7 +27,7 @@ function resizeContent() {
 	$("#details_help").width(($("#manage_listing_content").width()) - 52 - 1 - 52 - ($("#details_content").width()));
 	$("#calendar_help, #description_help, #photos_help, #details_help").css('min-height', ($("#site_content").height() - 40));
 	$("#content_shadow").width($("#manage_listing_content").width());
-	$("#advanced_options").css('margin-top', ($("#manage_listing_nav").height() - 117));
+	$("#advanced_options").css('top', ($("#manage_listing_nav").height() + 70));
 }
 
 /* ==========================================================================
@@ -257,6 +257,7 @@ var listingTitle;
 function descriptionComplete () {
 	$('.status_icon.description.complete').removeClass('hidden');
 	$('.tooltip.next.description').addClass('perma-hidden');
+	showPhotosTooltip();
 	if (descriptionCompleteCount == 0) {
 		sectionCompleteCount++;
 		descriptionCompleteCount++;

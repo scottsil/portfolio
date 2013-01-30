@@ -426,6 +426,7 @@ a {
 }
 
 #advanced_options {
+    position: fixed;
     height: 28px;
     width: 212px;
     color: #989898;

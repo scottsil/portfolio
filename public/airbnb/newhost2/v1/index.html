@@ -81,12 +81,12 @@
                             </div>
                             <div class="available_info sometimes animated fadeInRight hidden">
                                 <h3>Sometimes Available</h3>
-                                <h4>All dates will be listed as available.<br>The calendar will become active after publishing your listing.</h4>
+                                <h4>Use the calendar to set specific dates as available or unavailble.<br>The calendar will become active after publishing your listing.</h4>
                                 <a href="#" onclick="chooseCalendarAgain();"><span id="back_to_choose_availability">« choose again</span></a>
                             </div>
                             <div class="available_info onetime animated fadeInRight hidden">
                                 <h3>One-Time Availability</h3>
-                                <h4>All dates will be listed as available.<br>The calendar will become active after publishing your listing.</h4>
+                                <h4>Set the dates that will be listed as available.<br>The calendar will become active after publishing your listing.</h4>
                                 <a href="#" onclick="chooseCalendarAgain();"><span id="back_to_choose_availability" class="onetime" >« choose again</span></a>
                             </div>
                         </div>
@@ -169,10 +169,10 @@
                             <label>Title</label>
                             <input class="description_field" onfocus="showTitleHelp();" onblur="hideTitleHelp();" onkeyup="saveOverviewFields(); updateListingTitle(this);" placeholder="Private room in San Francisco"></input>
                             <label>Summary</label>
-                            <textarea class="description_field four_line no_bottom" placeholder="50-200 characters about your listing..." onfocus="showDescriptionHelp();" maxlength="200" onblur="hideDescriptionHelp(); showPhotosTooltip();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
+                            <textarea class="description_field four_line no_bottom" placeholder="50-200 characters about your listing..." onfocus="showDescriptionHelp();" maxlength="200" onblur="hideDescriptionHelp();" onkeyup="saveOverviewFields(); charCount(this);"></textarea>
                         </div>
                         <a href="#" class="collapsible_section_header" onclick="showDescriptionSection();">
-                            <div class="section_header description collapsed">
+                            <div class="section_header description collapsed hidden">
                                 <hr>
                                 <span class="save_notice header space start hidden fadeIn pink right">
                                     Saving...
